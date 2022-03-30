@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Market from './pages/Market';
 import Blightsources from './pages/Blightsources';
@@ -14,10 +14,10 @@ const user = {
     'https://images.unsplash.com/photo-1512805121331-92b37f7ecd36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
 };
 const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'Information', href: '/info', current: false },
-  { name: 'Blightsources', href: '/blightsources', current: false },
-  { name: 'Market', href: '/market', current: false },
+  { name: 'Home', path: '/' },
+  { name: 'Information', path: '/info' },
+  { name: 'Blightsources', path: '/blightsources' },
+  { name: 'Market', path: '/market' },
 ];
 const userNavigation = [
   { name: 'Your Profile', href: '/profile' },
@@ -29,11 +29,11 @@ function classNames(...classes) {
 }
 
 function App() {
-  const [menu, setMenu] = useState('home');
+  let location = useLocation();
 
   return (
-    <div className='min-h-full'>
-      <div className='bg-gray-800 pb-32'>
+    <div className='h-full bg-gray-800'>
+      <div className='pb-32'>
         <Disclosure as='nav' className='bg-gray-800'>
           {({ open }) => (
             <>
@@ -50,26 +50,22 @@ function App() {
                       </div>
                       <div className='hidden md:block'>
                         <div className='ml-10 flex items-baseline space-x-4'>
-                          {navigation.map(
-                            (
-                              item // TODO: INSERT LINK ELEMENTS HERE TO TRIGGER THE ROUTING
-                            ) => (
-                              <a
-                                key={item.name}
-                                href={item.href}
-                                className={classNames(
-                                  item.current
-                                    ? 'bg-gray-900 text-white'
-                                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                  'px-3 py-2 rounded-md text-sm font-medium',
-                                  item.name
-                                )}
-                                aria-current={item.current ? 'page' : undefined}
-                              >
-                                {item.name}
-                              </a>
-                            )
-                          )}
+                          {navigation.map((item) => (
+                            <Link
+                              key={item.name}
+                              to={item.path}
+                              className={classNames(
+                                item.path === location.pathname
+                                  ? 'bg-gray-900 text-white'
+                                  : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                'px-3 py-2 rounded-md text-sm font-medium',
+                                item.name
+                              )}
+                              aria-current={item.current ? 'page' : undefined}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -211,17 +207,15 @@ function App() {
         </header>
       </div>
 
-      <main className='-mt-32'>
-        <div className='max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8'>
+      <main className='-mt-32 h-full'>
+        <div className='max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8 h-full'>
           {/* Replace with your content */}
-          <div className='bg-white rounded-lg shadow px-5 py-6 sm:px-6'>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/blightsources' element={<Blightsources />} />
-              <Route path='/market' element={<Market />} />
-              <Route path='/information' element={<Information />} />
-            </Routes>
-          </div>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/blightsources' element={<Blightsources />} />
+            <Route path='/market' element={<Market />} />
+            <Route path='/info' element={<Information />} />
+          </Routes>
           {/* /End replace */}
         </div>
       </main>
