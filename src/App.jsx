@@ -1,6 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import {
+  BellIcon,
+  MenuIcon,
+  XIcon,
+  BeakerIcon,
+  MinusCircleIcon,
+  SparklesIcon,
+  InformationCircleIcon,
+} from '@heroicons/react/outline';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Market from './pages/Market';
@@ -8,21 +16,30 @@ import Blightsources from './pages/Blightsources';
 import Information from './pages/Information';
 
 const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
+  name: 'Gwen',
+  rank: 'Struggling Peddler',
+  coins: '100',
   imageUrl:
-    'https://images.unsplash.com/photo-1512805121331-92b37f7ecd36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+    'https://images.unsplash.com/photo-1627645835237-0743e52b991f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80&auto=format&fit=crop&w=880&q=80',
 };
 const navigation = [
   { name: 'Home', path: '/' },
-  { name: 'Information', path: '/info' },
   { name: 'Blightsources', path: '/blightsources' },
   { name: 'Market', path: '/market' },
+  { name: 'Information', path: '/info' },
 ];
 const userNavigation = [
   { name: 'Your Profile', href: '/profile' },
   { name: 'Settings', href: '/settings' },
 ];
+const getIcon = {
+  'Home': <SparklesIcon className='h-9 w-9' aria-hidden='true' />,
+  'Blightsources': <BeakerIcon className='h-9 w-9' aria-hidden='true' />,
+  'Market': <MinusCircleIcon className='h-9 w-9' aria-hidden='true' />,
+  'Information': (
+    <InformationCircleIcon className='h-9 w-9' aria-hidden='true' />
+  ),
+};
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -30,6 +47,16 @@ function classNames(...classes) {
 
 function App() {
   let location = useLocation();
+  const [title, setTitle] = useState('Home');
+
+  useEffect(() => {
+    setTitle(
+      navigation.find((route) => route.path === location.pathname).name ||
+        'Error Getting Title'
+    );
+  }, [location]);
+
+  // TODO: BREAK OUT NAV AND TITLE INTO A PAGE HEADER COMPONENT
 
   return (
     <div className='h-full bg-gray-800'>
@@ -42,11 +69,13 @@ function App() {
                   <div className='flex items-center justify-between h-16 px-4 sm:px-0'>
                     <div className='flex items-center'>
                       <div className='flex-shrink-0'>
-                        <img
-                          className='h-8 w-8'
-                          src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
-                          alt='Workflow'
-                        />
+                        <button
+                          type='button'
+                          className='ml-auto bg-gray-800 flex-shrink-0 p-1 text-gray-400 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
+                        >
+                          <span className='sr-only'>View notifications</span>
+                          {getIcon[title]}
+                        </button>
                       </div>
                       <div className='hidden md:block'>
                         <div className='ml-10 flex items-baseline space-x-4'>
@@ -202,12 +231,12 @@ function App() {
         </Disclosure>
         <header className='py-10'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <h1 className='text-3xl font-bold text-white'>Home</h1>
+            <h1 className='text-3xl font-bold text-white'>{title}</h1>
           </div>
         </header>
       </div>
 
-      <main className='-mt-32 h-full'>
+      <main className='-mt-32 h-full bg-gray-800'>
         <div className='max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8 h-full'>
           {/* Replace with your content */}
           <Routes>
