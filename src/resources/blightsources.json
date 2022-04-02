@@ -697,7 +697,7 @@
     {
       "category": "Blightflora",
       "description": [
-        "Blightflora resemble plants, though they appear to interact differently with the established natural laws, much like the very Festerfonts that spawn them. They must be harvested carefully to obtain the valuable parts. If the whole plant is desired, it is even more difficult to store it while in transit and harder still to keep it alive. If a blightflora somehow successfully makes it back to a lab without wilting, it must regularly suckle blight energy to 'live' on. Most harvesters will not bother learning to collect them, reasonably deeming them more trouble than they're worth. They are less likely to be found in desert biome festerfonts, but other biomes contain them in ample supply.",
+        "Blightflora resemble plants, though they appear to interact differently with the established natural laws, much like the very Festerfonts that spawn them. They must be harvested carefully to obtain the valuable parts. If the whole plant is desired, it is even more difficult to store in transit, and harder still to keep alive on arrival. If a blightflora somehow successfully makes it back to a lab without wilting, it must regularly suckle blight energy. Most harvesters will not bother learning to collect them, reasonably deeming them more trouble than they're worth. These are less likely to be found in desert biome festerfonts, but other biomes contain an ample supply.",
         "Some blightflora exhibit incredible properties, though this category of blightsource is surprisingly varied, so pinning down which variant of blightbloom or blightsnarl has which characteristic can be difficult. This difficulty is compounded by the festerfonts they spawn in, making them inherently difficult to document safely. However, There will always be reckless fools who try to collect them for sport, and it is these hobbyists who are in the best position to contribute to a more comprehensive image of blightflora variability."
       ],
       "subcategories": [
@@ -713,14 +713,16 @@
           "category": "Blightflora",
           "subcategory": "Blightpillars",
           "description": [
-            "Blightpillars closely resemble trees, but they are produced and sustained by a festerfont's blight energies, and thus, can only grow upon one. They can be cut down to obtain wood with strange properties. Many use this wood for innovative purposes.", "Axes work just as well on blightpillars as they do on normal trees, though inferior materials will quickly wear through. Another concern is that the sound of a blightpillar being felled announces the harvest party's presence, attracting nearby blightbeasts. There has not, to date, ever been a documented case of a harvester successfully collecting a living blightpillar specimen. At least, not one that lived long once it was replanted outside a festerfont."
+            "Blightpillars closely resemble trees, but they are produced and sustained by a festerfont's blight energies, and thus, can only grow upon one. They can be cut down to obtain wood with strange properties. Many use this wood for innovative purposes.",
+            "Axes work just as well on blightpillars as they do on normal trees, though inferior materials will quickly wear through. Another concern is that the sound of a blightpillar being felled announces the harvest party's presence, attracting nearby blightbeasts. There has not, to date, ever been a documented case of a harvester successfully collecting a living blightpillar specimen. At least, not one that lived long once it was replanted outside a festerfont."
           ]
         },
         {
           "category": "Blightflora",
           "subcategory": "Blightsnarls",
           "description": [
-            "These blightflora consist of bodies called 'soma', which produce extensions of different tissue called 'axons'. These two parts form intricate webs together with other members of a community of blightsnarls. Experimentation with active networks of blightsnarls reveal that they are capable of transmitting signals relating to resource locations and threats to their environment, across the network, and thereby guide the future development of the network. A blightsnarl does not need any of the resources it discovers. The function of the mapping behavior is unclear.", "One recent revelation is that blightsnarls only appear within 'command' configuration festerfonts, or where there are nearby neighboring command festerfonts. Disrupting blightsnarl networks growing around a festerfont will hinder the ability for a command festerfont to communicate with its neighbors, though, it is only one such communication mechanism a command type employs. Researchers believe blightsnarls will eventually be harvested for use in pseudo-biological computation technology, using the material's innate networking specialization to allow sentients to communicate across vast distances. There is also further speculation on whether artificial representations could be made possible through study."
+            "These blightflora consist of bodies called 'soma', which produce extensions of different tissue called 'axons'. These two parts form intricate webs together with other members of a community of blightsnarls. Experimentation with active networks of blightsnarls reveal that they are capable of transmitting signals relating to resource locations and threats to their environment, across the network, and thereby guide the future development of the network. A blightsnarl does not need any of the resources it discovers. The function of the mapping behavior is unclear.",
+            "One recent revelation is that blightsnarls only appear within 'command' configuration festerfonts, or where there are nearby neighboring command festerfonts. Disrupting blightsnarl networks growing around a festerfont will hinder the ability for a command festerfont to communicate with its neighbors, though, it is only one such communication mechanism a command type employs. Researchers believe blightsnarls will eventually be harvested for use in pseudo-biological computation technology, using the material's innate networking specialization to allow sentients to communicate across vast distances. There is also further speculation on whether artificial representations could be made possible through study."
           ]
         }
       ]
@@ -728,28 +730,32 @@
     {
       "category": "Blightfungi",
       "description": [
-        "", ""
+        "Blightfungi resemble fungi of the natural world, though the similarities often end upon close examination. They are often parasitic in nature, leeching resources in a specific way (e.g blightshrooms). Another trait drawn under this umbrella is the ability to self-replicate, such as with the sporesprawls. Blight researchers were initially very interested in studying what they thought were 'docile blightbeasts', only to then learn that they were not blightbeasts at all. Later still, blightbleeds were discovered, and self-preservation saw the number of eager scientists lining up to journey into festerfonts to seek out blightfungi dwindle to a small trickle.",
+        "Though blightsources and most definitely not blightbeasts, blightfungi are dangerous in an environment where a seeker's resources preserve their lives. Exhausted resources due to a poorly situated camp, such as one in a cluster of blightshrooms, is yet another threat to contend with out on contract. Blightfungi are commonly found in all festerfont biomes save for deserts."
       ],
       "subcategories": [
         {
           "category": "Blightfungi",
           "subcategory": "Blightshrooms",
           "description": [
-            "", ""
+            "A blightshroom bears a resemblance to a mushroom, including cap and mycelium structures. However, it is typically sustained by a festerfont's energies, though it can be supplied with an alternate food source. Most are very efficient at extracting certain nutrients from whatever they grow on. In some cases, festerfonts develop to reclaim this energy through some yet-unknown method.",
+            "Blightshrooms can be harvested and used to extract nutrients from various surfaces, including the very ground, though it is difficult for researchers to predict what will be extracted, and varying results leads to disappointments. Hope for more practical applications remain strong, at least for some blightfungi materials."
           ]
         },
         {
           "category": "Blightfungi",
           "subcategory": "Blightbleeds",
           "description": [
-            "", ""
+            "A blightbleed is a type of blightfungus that grows on a living thing, taking the appearance of a bubbling jelly. It is named after a particularly ugly appearance, as if Blighted blood drips from the host. Coloration of this 'blood' depends on the specimen in question, and also upon the host it has attached itself to.",
+            "Sometimes, a blightbleed can be useful for its mutualistic relationship with the organic matter that hosts it. Normally, a human or any such intelligent species would not be crazy enough to willingly allow the Blight to grow on them, but some eccentric seekers or civilians have cultivated blightbleed on their bodies to augment their abilities. Ironically, later discoveries reveal that a person integrated with a blightbleed growth is more resistant to the harmful mental effects of the Blight Malady."
           ]
         },
         {
           "category": "Blightfungi",
           "subcategory": "Sporesprawls",
           "description": [
-            "", ""
+            "A sporesprawl is a rare type of blightfungi that will remain dormant in a pod-like structure, passively feeding on whatever stray energy is nearby, until it activates and begins producing spores at an explosive rate. These spores then begin to spread a spongy growth wherever they touch down, forming the substance that could be considered the second stage manifestation of the sporesprawl. Finally, the spongy growth starts to decay, receding back into freshly formed pods, accumulating in areas with the highest resource availability. This process is excessively disruptive to the surrounding environment, puzzling researchers.",
+            "- Harvesters and combat seekers alike avoid areas where sporesprawls are known to be active. It is not a pleasant experience to have your body's vitality sapped away with every step you take, worse still when you find that coexisting blightbeasts all have traits that make them suited to operate in such environments."
           ]
         }
       ]
@@ -757,28 +763,32 @@
     {
       "category": "Blightanomalies",
       "description": [
-        "", ""
+        "The blightanomalies are bizarre oddities that only appear in festerfonts. Very little is known about them. They are prized by collectors, who believe they grant special powers, once unlocked. However, there has yet to be any scientific test that measured any such boon being granted by one of these objects. Though certain tests can confirm whether an object actually is a blightanomaly or if it is just a fake. Every single blightanomaly is unique, though some have similar powers.",
+        "Given that cults have sprung up upon the discovery of these objects, blightanomalies aren't so much harvested as they are collected and safely secured. Some  have seen use as special tools of power, but only the government and the Blightbane Guild can authorize such uses. Blightanomalies aren't found in greater or lesser quantities in any particular biome. That is to say, they are extremely rare in any biome."
       ],
       "subcategories": [
         {
           "category": "Blightanomalies",
           "subcategory": "Tokens",
           "description": [
-            "", ""
+            "Tokens are the most commonly found category of blightanomaly, but that in no way means they are easy to find. Often, their effects are subtle enough to write off as tricks of the mind, lies, or any such natural occurrence.",
+            "Samples from this category of blightanomaly are often studied in earnest. If a firm confidence can be reached in a token's power, they can be authorized for use in festerfont purges and such high-threat engagements."
           ]
         },
         {
           "category": "Blightanomalies",
           "subcategory": "Loci",
           "description": [
-            "", ""
+            "Loci are moderate-strength blightanomalies. They are rarer than tokens, but that hasn't stopped them from causing a lot of damage over the years.",
+            "These are only rare authorized for use by the Blightbane Branch leader responsible for securing them, usually only in an emergency, and only when the effect of the locus is well documented."
           ]
         },
         {
           "category": "Blightanomalies",
           "subcategory": "Vestiges",
           "description": [
-            "", ""
+            "Vestiges are extraordinarily rare blightanomalies which have the capability to cause massive disruptions to everyday life. The spread of this chaos can be as small as only the holder, or in most cases, as unrestrained as to spread to a wide area and engulf hundreds in the effect.",
+            "The name is a reference to the Orchestrators, but few know that. The Blightbane Guild has a standing order to acquire and contain any known vestiges, as their use is strictly forbidden without the national Blightbane Guild leader's approval. Shroud's leadership has such an order too, but they have yet to make the connection between the rare appearance of such an object and The Blight. Maybe if they did, they wouldn't ignore the threat the phenomenon poses."
           ]
         }
       ]

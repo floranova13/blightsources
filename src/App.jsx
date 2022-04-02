@@ -59,7 +59,7 @@ function App() {
   // TODO: BREAK OUT NAV AND TITLE INTO A PAGE HEADER COMPONENT
 
   return (
-    <div className='h-full bg-gray-800'>
+    <div className='min-h-full bg-gray-800'>
       <div className='pb-32'>
         <Disclosure as='nav' className='bg-gray-800'>
           {({ open }) => (
