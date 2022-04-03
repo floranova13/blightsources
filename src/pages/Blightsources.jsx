@@ -16,9 +16,24 @@ const Blightsources = () => {
 
   return (
     <>
-      {(!category && !subcategory) && <BlightsourceCategoryCards categorySetter={setCategory} />}
-      {(category && !subcategory) && <BlightsourceSubcategoryCards category={category} subcategorySetter={setSubcategory} />}
-      {(category && subcategory) && <Blightsource category={category} subcategory={subcategory} />}
+      {!category && !subcategory && (
+        <BlightsourceCategoryCards categorySetter={setCategory} />
+      )}
+      {category && !subcategory && (
+        <BlightsourceSubcategoryCards
+          category={category}
+          categorySetter={setCategory}
+          subcategorySetter={setSubcategory}
+        />
+      )}
+      {category && subcategory && (
+        <Blightsource
+          category={category}
+          subcategory={subcategory}
+          categorySetter={setCategory}
+          subcategorySetter={setSubcategory}
+        />
+      )}
     </>
   );
 };

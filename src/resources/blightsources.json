@@ -10,7 +10,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightstones",
@@ -20,7 +22,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightstones",
@@ -30,7 +34,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "crystali": [
@@ -42,7 +48,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightstones",
@@ -52,7 +60,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightstones",
@@ -62,7 +72,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "lylodes": [
@@ -74,7 +86,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightstones",
@@ -84,7 +98,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightstones",
@@ -94,7 +110,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ]
     },
@@ -108,7 +126,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightichors",
@@ -118,7 +138,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightichors",
@@ -128,7 +150,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "blightvenoms": [
@@ -140,7 +164,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightichors",
@@ -150,7 +176,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightichors",
@@ -160,7 +188,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "blightmares": [
@@ -172,7 +202,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightichors",
@@ -182,7 +214,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightichors",
@@ -192,7 +226,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ]
     },
@@ -206,7 +242,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfumes",
@@ -216,7 +254,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfumes",
@@ -226,7 +266,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "miasmeta": [
@@ -238,7 +280,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfumes",
@@ -248,7 +292,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfumes",
@@ -258,7 +304,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "blightmists": [
@@ -270,7 +318,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfumes",
@@ -280,7 +330,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfumes",
@@ -290,7 +342,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ]
     },
@@ -304,7 +358,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightflora",
@@ -314,7 +370,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightflora",
@@ -324,7 +382,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "blightpillars": [
@@ -336,7 +396,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightflora",
@@ -346,7 +408,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightflora",
@@ -356,7 +420,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "blightsnarls": [
@@ -368,7 +434,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightflora",
@@ -378,7 +446,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightflora",
@@ -388,7 +458,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ]
     },
@@ -402,7 +474,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfungi",
@@ -412,7 +486,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfungi",
@@ -422,7 +498,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "blightbleeds": [
@@ -434,7 +512,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfungi",
@@ -444,7 +524,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfungi",
@@ -454,7 +536,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "sporesprawls": [
@@ -466,7 +550,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfungi",
@@ -476,7 +562,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightfungi",
@@ -486,7 +574,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ]
     },
@@ -500,7 +590,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightanomalies",
@@ -510,7 +602,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightanomalies",
@@ -520,7 +614,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "loci": [
@@ -532,7 +628,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightanomalies",
@@ -542,7 +640,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightanomalies",
@@ -552,7 +652,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ],
       "vestiges": [
@@ -564,7 +666,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightanomalies",
@@ -574,7 +678,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         },
         {
           "category": "Blightanomalies",
@@ -584,7 +690,9 @@
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
           ],
-          "introduced": 1
+          "introduced": 1,
+          "basevalue": -1,
+          "currentvalue": -1
         }
       ]
     }
