@@ -2,22 +2,10 @@ import {
   useQuery,
   useMutation,
   useQueryClient,
-  QueryClient,
-  QueryClientProvider,
 } from 'react-query';
 import info from '../resources/blightsources.json';
 
-// Create a client
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      // ✅ globally default to 20 seconds
-      staleTime: 1000 * 20,
-    },
-  },
-});
-
-let prices = {};
+let prices = {}; // TODO: PUT THIS IN LOCAL STATE IF THIS DOESN'T WORK
 
 const setBaseBlightsourcePrices = () => {
   const blightsourcePrices = {};
@@ -29,13 +17,18 @@ const setBaseBlightsourcePrices = () => {
       const blightsources = {};
 
       for (const blightsource in info.blightsources[category][subcategory]) {
-        const price = blightsource.baseValue;
+        let basePrice = blightsource.baseValue;
+        let maxMult = 1.2;
+        let minMult = 0.8;
 
-        if (price === -1) {
-          price = blightsource.rarity * 9;
+        if (basePrice === -1) {
+          basePrice = blightsource.rarity * 9;
         }
 
-        blightsources[blightsource.name] = price;
+        const currentPrice =
+          (Math.random() * (maxMult - minMult) + minMult) * basePrice;
+
+        blightsources[blightsource.name] = { basePrice, currentPrice };
       }
 
       subcategories[subcategory] = blightsources;
@@ -49,8 +42,25 @@ const setBaseBlightsourcePrices = () => {
   return blightsourcePrices;
 };
 
+const getNewBlightsourcePrice = async (price) => {
+  let maxMult = 1.2;
+  let minMult = 0.8;
+  const { basePrice } = price;
+  const newCurrentPrice =
+    (Math.random() * (maxMult - minMult) + minMult) * basePrice;
+
+  return { basePrice, currentPrice: newCurrentPrice };
+};
+
 const setInitialBlightsourceState = async () => {
-  const { data } = setBaseBlightsourcePrices();
+  const data = setBaseBlightsourcePrices();
+  return data;
+};
+
+const updateBlightsourcePrice = async (category, subcategory, name) => {
+  const price = await getBlightsource(category, subcategory, name);
+  const data = getNewBlightsourcePrice(price);
+
   return data;
 };
 
@@ -64,6 +74,25 @@ export function useSetBlightsources() {
   return useMutation(() => setInitialBlightsourceState());
 }
 
+export function useUpdateBlightsource(category, subcategory, name) {
+  const queryClient = useQueryClient();
+
+  return useMutation(
+    (category, subcategory, name) =>
+      updateBlightsourcePrice(category, subcategory, name),
+    {
+      onSuccess: (price) => {
+        queryClient.setQueryData(
+          ['blightsource', { category, subcategory, name }],
+          price
+        );
+      },
+    }
+  );
+}
+
 export function useBlightsource(category, subcategory, name) {
-  return useQuery(['blightsource', name], () => getBlightsourceByName(name));
+  return useQuery(['blightsource', { category, subcategory, name }], () =>
+    getBlightsource(category, subcategory, name)
+  );
 }
