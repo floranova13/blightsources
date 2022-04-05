@@ -9,12 +9,18 @@ import {
   SparklesIcon,
   InformationCircleIcon,
 } from '@heroicons/react/outline';
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
+import {
+  Routes,
+  Route,
+  Link,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import Home from './pages/Home';
 import Market from './pages/Market';
 import Blightsources from './pages/Blightsources';
 import Information from './pages/Information';
-import { setBaseBlightsourcePrices } from './hooks/blightsources';
+import { setBaseBlightsourcePrices, updateAllBlightsources, useBlightsource } from './hooks/blightsources';
 
 const user = {
   name: 'Gwen',
@@ -30,8 +36,8 @@ const navigation = [
   { name: 'Information', path: '/info' },
 ];
 const userNavigation = [
-  { name: 'Your Profile', href: '/profile' },
-  { name: 'Settings', href: '/settings' },
+  { name: 'Your Profile', path: '/profile' },
+  { name: 'Settings', path: '/settings' },
 ];
 const getIcon = {
   'Home': <SparklesIcon className='h-9 w-9' aria-hidden='true' />,
@@ -48,10 +54,10 @@ function classNames(...classes) {
 
 function App() {
   let location = useLocation();
+  let navigate = useNavigate();
   const [title, setTitle] = useState('Home');
-  const prices = JSON.stringify(setBaseBlightsourcePrices());
-
-  console.log(prices);
+  setBaseBlightsourcePrices();
+  updateAllBlightsources();
 
   useEffect(() => {
     setTitle(
@@ -61,6 +67,7 @@ function App() {
   }, [location]);
 
   // TODO: BREAK OUT NAV AND TITLE INTO A PAGE HEADER COMPONENT
+  // TODO: MAKE IT SO THE MOBILE MENU ACTUALLY NAVIGATES TO PAGES
 
   return (
     <div className='min-h-full bg-gray-800'>
@@ -136,17 +143,17 @@ function App() {
                             <Menu.Items className='origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none'>
                               {userNavigation.map((item) => (
                                 <Menu.Item key={item.name}>
-                                  {({ active }) => (
-                                    <a
-                                      href={item.href}
-                                      className={classNames(
-                                        active ? 'bg-gray-100' : '',
-                                        'block px-4 py-2 text-sm text-gray-700'
-                                      )}
-                                    >
-                                      {item.name}
-                                    </a>
-                                  )}
+                                  <Link
+                                    to={item.path}
+                                    className={classNames(
+                                      item.path === location.pathname
+                                        ? 'bg-gray-100'
+                                        : '',
+                                      'block px-4 py-2 text-sm text-gray-700'
+                                    )}
+                                  >
+                                    {item.name}
+                                  </Link>
                                 </Menu.Item>
                               ))}
                             </Menu.Items>
@@ -175,12 +182,11 @@ function App() {
               <Disclosure.Panel className='border-b border-gray-700 md:hidden'>
                 <div className='px-2 py-3 space-y-1 sm:px-3'>
                   {navigation.map((item) => (
-                    <Disclosure.Button
+                    <Link
                       key={item.name}
-                      as='a'
-                      href={item.href}
+                      to={item.path}
                       className={classNames(
-                        item.current
+                        item.path === location.pathname
                           ? 'bg-gray-900 text-white'
                           : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                         'block px-3 py-2 rounded-md text-base font-medium'
@@ -188,7 +194,7 @@ function App() {
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
-                    </Disclosure.Button>
+                    </Link>
                   ))}
                 </div>
                 <div className='pt-4 pb-3 border-t border-gray-700'>
@@ -221,7 +227,7 @@ function App() {
                       <Disclosure.Button
                         key={item.name}
                         as='a'
-                        href={item.href}
+                        onClick={() => navigate(item.path)}
                         className='block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700'
                       >
                         {item.name}

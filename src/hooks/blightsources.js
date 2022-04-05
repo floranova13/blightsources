@@ -1,8 +1,4 @@
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-} from 'react-query';
+import { useQuery, useMutation, useQueryClient } from 'react-query';
 import info from '../resources/blightsources.json';
 
 let prices = {}; // TODO: PUT THIS IN LOCAL STATE IF THIS DOESN'T WORK
@@ -63,7 +59,8 @@ const setInitialBlightsourceState = async () => {
 
 const updateBlightsourcePrice = async (category, subcategory, name) => {
   const price = await getBlightsource(category, subcategory, name);
-  const data = getNewBlightsourcePrice(price);
+  const data = await getNewBlightsourcePrice(price);
+  prices[category][subcategory][name] = data;
 
   return data;
 };
@@ -94,6 +91,35 @@ export function useUpdateBlightsource(category, subcategory, name) {
     }
   );
 }
+
+export const updateAllBlightsources = async () => {
+  for (const category of prices) {
+    console.log(category);
+    for (const subcategory of category) {
+      console.log(subcategory);
+      for (const name of subcategory) {
+        console.log(name);
+        await updateBlightsourcePrice(category, subcategory, name);
+      }
+    }
+  }
+}
+
+// export async function useUpdateBlightsources() {
+
+//   return useMutation(
+//     () =>
+//       updateBlightsourcePrice(category, subcategory, name),
+//     {
+//       onSuccess: (price) => {
+//         queryClient.setQueryData(
+//           ['blightsource', { category, subcategory, name }],
+//           price
+//         );
+//       },
+//     }
+//   );
+// }
 
 export function useBlightsource(category, subcategory, name) {
   return useQuery(['blightsource', { category, subcategory, name }], () =>
