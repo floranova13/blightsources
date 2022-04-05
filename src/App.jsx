@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import Market from './pages/Market';
 import Blightsources from './pages/Blightsources';
 import Information from './pages/Information';
+import { setBaseBlightsourcePrices } from './hooks/blightsources';
 
 const user = {
   name: 'Gwen',
@@ -48,6 +49,9 @@ function classNames(...classes) {
 function App() {
   let location = useLocation();
   const [title, setTitle] = useState('Home');
+  const prices = JSON.stringify(setBaseBlightsourcePrices());
+
+  console.log(prices);
 
   useEffect(() => {
     setTitle(

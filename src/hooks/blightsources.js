@@ -7,17 +7,20 @@ import info from '../resources/blightsources.json';
 
 let prices = {}; // TODO: PUT THIS IN LOCAL STATE IF THIS DOESN'T WORK
 
-const setBaseBlightsourcePrices = () => {
+export const setBaseBlightsourcePrices = () => {
   const blightsourcePrices = {};
 
-  for (const category in info.information) {
+  for (const c of info.information) {
     const subcategories = {};
+    const category = c.category.toLowerCase();
 
-    for (const subcategory in category.subcategories) {
+    for (const s of c.subcategories) {
       const blightsources = {};
+      const subcategory = s.subcategory.toLowerCase();
 
-      for (const blightsource in info.blightsources[category][subcategory]) {
-        let basePrice = blightsource.baseValue;
+      for (const blightsource of info.blightsources[category][subcategory]) {
+        // console.log({ blightsource })
+        let basePrice = blightsource.basevalue;
         let maxMult = 1.2;
         let minMult = 0.8;
 
@@ -26,9 +29,10 @@ const setBaseBlightsourcePrices = () => {
         }
 
         const currentPrice =
-          (Math.random() * (maxMult - minMult) + minMult) * basePrice;
+          Math.round(Math.random() * (maxMult - minMult) + minMult) * basePrice;
 
         blightsources[blightsource.name] = { basePrice, currentPrice };
+        console.log(blightsources[blightsource.name]);
       }
 
       subcategories[subcategory] = blightsources;
