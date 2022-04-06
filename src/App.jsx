@@ -20,7 +20,7 @@ import Home from './pages/Home';
 import Market from './pages/Market';
 import Blightsources from './pages/Blightsources';
 import Information from './pages/Information';
-import { setBaseBlightsourcePrices, updateAllBlightsources, useBlightsource } from './hooks/blightsources';
+import { setBaseBlightsourcePrices, updateAllBlightsources } from './hooks/blightsources';
 
 const user = {
   name: 'Gwen',
@@ -58,6 +58,11 @@ function App() {
   const [title, setTitle] = useState('Home');
   setBaseBlightsourcePrices();
   updateAllBlightsources();
+
+  useEffect(() => {
+    let intervalID = setInterval(() => updateAllBlightsources(), 5000);
+    return clearInterval(intervalID);
+  }, [])
 
   useEffect(() => {
     setTitle(

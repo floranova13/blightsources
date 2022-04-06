@@ -3,6 +3,20 @@ import info from '../resources/blightsources.json';
 
 let prices = {}; // TODO: PUT THIS IN LOCAL STATE IF THIS DOESN'T WORK
 
+export const getPrices = () => {
+  if (prices && Object.keys(prices).length) {
+    return prices;
+  }
+  return setBaseBlightsourcePrices();
+};
+
+export const getPrice = (category, subcategory, name) => {
+  if (prices && Object.keys(prices).length) {
+    return prices[category][subcategory][name];
+  }
+  return setBaseBlightsourcePrices()[category][subcategory][name];
+};
+
 export const setBaseBlightsourcePrices = () => {
   const blightsourcePrices = {};
 
@@ -28,7 +42,7 @@ export const setBaseBlightsourcePrices = () => {
           Math.round(Math.random() * (maxMult - minMult) + minMult) * basePrice;
 
         blightsources[blightsource.name] = { basePrice, currentPrice };
-        console.log(blightsources[blightsource.name]);
+        // console.log(blightsources[blightsource.name]);
       }
 
       subcategories[subcategory] = blightsources;
@@ -46,8 +60,9 @@ const getNewBlightsourcePrice = async (price) => {
   let maxMult = 1.2;
   let minMult = 0.8;
   const { basePrice } = price;
-  const newCurrentPrice =
-    (Math.random() * (maxMult - minMult) + minMult) * basePrice;
+  const newCurrentPrice = Math.round(
+    (Math.random() * (maxMult - minMult) + minMult) * basePrice
+  );
 
   return { basePrice, currentPrice: newCurrentPrice };
 };
@@ -60,13 +75,13 @@ const setInitialBlightsourceState = async () => {
 const updateBlightsourcePrice = async (category, subcategory, name) => {
   const price = await getBlightsource(category, subcategory, name);
   const data = await getNewBlightsourcePrice(price);
-  prices[category][subcategory][name] = data;
+  getPrices()[category][subcategory][name] = data;
 
   return data;
 };
 
 const getBlightsource = async (category, subcategory, name) => {
-  const data = prices[category][subcategory][name];
+  const data = getPrice(category, subcategory, name);
 
   return data;
 };
@@ -93,17 +108,19 @@ export function useUpdateBlightsource(category, subcategory, name) {
 }
 
 export const updateAllBlightsources = async () => {
-  for (const category of prices) {
-    console.log(category);
-    for (const subcategory of category) {
-      console.log(subcategory);
-      for (const name of subcategory) {
-        console.log(name);
+  for (const category of Object.keys(getPrices())) {
+    // console.log(category);
+    for (const subcategory of Object.keys(getPrices()[category])) {
+      // console.log(subcategory);
+      for (const name of Object.keys(getPrices()[category][subcategory])) {
+        // console.log(name);
         await updateBlightsourcePrice(category, subcategory, name);
+        // console.log(`Updated: ${category}, ${subcategory}, ${name}`);
       }
     }
   }
-}
+  console.log('Updated prices');
+};
 
 // export async function useUpdateBlightsources() {
 
