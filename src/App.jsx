@@ -20,7 +20,7 @@ import Home from './pages/Home';
 import Market from './pages/Market';
 import Blightsources from './pages/Blightsources';
 import Information from './pages/Information';
-import { setBaseBlightsourcePrices, updateAllBlightsources } from './hooks/blightsources';
+import { useUpdatePrices } from './hooks/blightsources';
 
 const user = {
   name: 'Gwen',
@@ -56,13 +56,15 @@ function App() {
   let location = useLocation();
   let navigate = useNavigate();
   const [title, setTitle] = useState('Home');
-  setBaseBlightsourcePrices();
-  updateAllBlightsources();
+  const { mutate: updatePrices } = useUpdatePrices();
+  // setBaseBlightsourcePrices();
+  // updateAllBlightsources();
 
   useEffect(() => {
-    let intervalID = setInterval(() => updateAllBlightsources(), 5000);
-    return clearInterval(intervalID);
-  }, [])
+    console.log('entered useEffect')
+    let intervalID = setInterval(() => updatePrices(), 1000 * 5);
+    return () => clearInterval(intervalID);
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setTitle(

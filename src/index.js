@@ -4,9 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from 'react-query';
@@ -16,8 +13,9 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      // ✅ globally default to 20 seconds
-      staleTime: 1000 * 5,
+      staleTime: 1000 * 20,
+      cacheTime: 1000 * 60 * 10,
+      // refetchInterval: 1000 * 7,
     },
   },
 });

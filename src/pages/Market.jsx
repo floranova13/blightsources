@@ -1,43 +1,16 @@
 import React from 'react';
-import {
-  useBlightsource,
-  useUpdateBlightsource,
-  getPrices,
-  getPrice,
-} from '../hooks/blightsources';
-import { useQuery } from 'react-query';
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from 'recharts';
-
-const getBlightsources = async () => {
-  const data = getPrices();
-  return data;
-};
-
-const getBlightsource = async (category, subcategory, name) => {
-  const data = getPrice(category, subcategory, name);
-  return data;
-};
+import PriceGraph from '../components/PriceGraph';
+import { useGetBlightsources, useGetBlightsource } from '../hooks/blightsources';
 
 const Market = () => {
-  // const { data, isLoading } = useBlightsource('blightstones', 'blightfoils', 'Forslone');
-  const { data, isLoading } = useQuery('blightsources', getBlightsources, {
-    staleTime: 5000,
-    refetchInterval: 5000,
-  });
-  console.log(isLoading);
+  const { data: prices, isLoading: isBlightsourcesLoading } = useGetBlightsources();
+  const { data: price, isLoading: isBlightsourceLoading } = useGetBlightsource('forslone');
 
   return (
     <div className=''>
-      <h1>{isLoading.toString()}</h1>
-      <h1>{JSON.stringify(data)}</h1>
+      {/* {!isBlightsourceLoading && <h1>{ price.priceHistory.join(', ') }</h1>}
+      {!isBlightsourcesLoading && <h1>{JSON.stringify(prices.map(b => ))}</h1>} */}
+      <PriceGraph blightsourceName='forslone' />
     </div>
   );
 };
