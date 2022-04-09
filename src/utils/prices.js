@@ -411,7 +411,6 @@ let prices = {
 export const getPrices = () => prices;
 
 export const getPrice = (blightsourceName) => {
-  console.log('price: ', prices[blightsourceName]);
   return prices[blightsourceName];
 };
 
@@ -439,8 +438,6 @@ export const updatePrices = () => {
       newPrices[blightsourceName] = newPrice;
     }
   }
-
-  console.log({ prices });
 
   prices = newPrices;
 };

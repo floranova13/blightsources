@@ -57,12 +57,9 @@ function App() {
   let navigate = useNavigate();
   const [title, setTitle] = useState('Home');
   const { mutate: updatePrices } = useUpdatePrices();
-  // setBaseBlightsourcePrices();
-  // updateAllBlightsources();
 
   useEffect(() => {
-    console.log('entered useEffect')
-    let intervalID = setInterval(() => updatePrices(), 1000 * 5);
+    let intervalID = setInterval(() => updatePrices(), 1000 * 20);
     return () => clearInterval(intervalID);
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 

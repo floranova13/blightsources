@@ -1,6 +1,6 @@
-import blightsources from '../common/resources/blightsources.json';
+import blightsources from '../resources/blightsources.json';
 
-export const getRarity = (n) => {
+export const getRarityLabel = (n) => {
   if (n < 9) {
     return 'Rare';
   } else if (n < 27) {
@@ -27,21 +27,30 @@ export const getBlightsourceSubcategories = (category = '') => {
 export const getBlightsources = (category = '', subcategory = '') => {
   const blightsourceArray = [];
 
-  Object.values(blightsources.blightsources).forEach((cat) =>
-    Object.values(cat).forEach((sub) => {
-      blightsourceArray.push(...sub);
+  Object.values(blightsources.blightsources).forEach((subcategoryObject) =>
+    Object.values(subcategoryObject).forEach((blightsourceObject) => {
+      blightsourceArray.push(...blightsourceObject);
     })
   );
 
-  // for (const cat in Object.values(blightsources.blightsources)) {
-  //   // for (const sub in Object.values(cat)) {
-  //   //   blightsourceArray.push(...sub);
-  //   // }
-  // }
-
   return blightsourceArray.filter(
     (b) =>
-      (!category || b.category === category) &&
-      (!subcategory || b.subcategory === subcategory)
+      (!category || b.category.toLowerCase() === category.toLowerCase()) &&
+      (!subcategory || b.subcategory.toLowerCase() === subcategory.toLowerCase())
   );
+};
+
+export const getCategoryBySubcategory = (s) => {
+  return blightsources.information.find(
+    (c) =>
+      c.subcategories.filter(
+        (subcategory) =>
+          subcategory.subcategory.toLowerCase() === s.toLowerCase()
+      ).length > 0
+  ).category;
+};
+
+export const getBlightsourceNamesBySubcategory = (s) => {
+  const category = getCategoryBySubcategory(s);
+  return getBlightsources(category, s).map((b) => b.name.toLowerCase());
 };

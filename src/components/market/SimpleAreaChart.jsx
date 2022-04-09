@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   AreaChart,
   Area,
@@ -9,14 +9,20 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const SimpleAreaChart = ({ data }) => {
+const SimpleAreaChart = ({ data, width, height }) => {
+  const [prices, setPrices] = useState(data);
+
+  useEffect(() => {
+    setPrices(data);
+  }, [data])
+
   return (
     <div className='h-full w-full'>
-      <ResponsiveContainer className='m-auto' width={600} height={450}>
+      <div key={data.length} className='m-auto' width={width} height={height}>
         <AreaChart
           width={1000}
           height={350}
-          data={data.slice()}
+          data={prices}
           margin={{
             top: 10,
             right: 30,
@@ -35,7 +41,7 @@ const SimpleAreaChart = ({ data }) => {
             fill='#8884d8'
           />
         </AreaChart>
-      </ResponsiveContainer>
+      </div>
     </div>
   );
 };
