@@ -14,34 +14,28 @@ const SimpleAreaChart = ({ data, width, height }) => {
 
   useEffect(() => {
     setPrices(data);
-  }, [data])
+  }, [data]);
 
   return (
-    <div className='h-full w-full'>
-      <div key={data.length} className='m-auto' width={width} height={height}>
-        <AreaChart
-          width={1000}
-          height={350}
-          data={prices}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='name' />
-          <YAxis />
-          <Tooltip />
-          <Area
-            type='monotone'
-            dataKey='coins'
-            stroke='#8884d8'
-            fill='#8884d8'
-          />
-        </AreaChart>
-      </div>
+    <div key={data.length} className='text-center inline' width={width} height={height}>
+      <AreaChart
+        className='m-auto'
+        width={width}
+        height={height}
+        data={prices}
+        margin={{
+          top: 10,
+          right: 30,
+          left: 0,
+          bottom: 0,
+        }}
+      >
+        <CartesianGrid strokeDasharray='3 3' />
+        <XAxis dataKey='name' />
+        <YAxis />
+        <Tooltip />
+        <Area type='monotone' dataKey='coins' stroke='#8884d8' fill='#8884d8' />
+      </AreaChart>
     </div>
   );
 };

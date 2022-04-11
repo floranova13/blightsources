@@ -441,3 +441,13 @@ export const updatePrices = () => {
 
   prices = newPrices;
 };
+
+export const getRecentPrices = (price) => {
+  const numberOfPrices = 6;
+  const priceArr = []
+  for(let i = price.priceHistory.length - (1 + numberOfPrices); i < price.priceHistory.length; i++) {
+    priceArr.push(price.priceHistory[i]);
+  }
+
+  return priceArr;
+}
