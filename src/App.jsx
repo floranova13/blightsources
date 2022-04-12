@@ -20,6 +20,8 @@ import Home from './pages/Home';
 import Market from './pages/Market';
 import Blightsources from './pages/Blightsources';
 import Information from './pages/Information';
+import BlightsourceReadout from './components/market/BlightsourceReadout';
+import BlightsourceSubcategoryReadout from './components/market/BlightsourceSubcategoryReadout';
 import { useUpdatePrices } from './hooks/blightsources';
 
 const user = {
@@ -61,11 +63,11 @@ function App() {
   useEffect(() => {
     let intervalID = setInterval(() => updatePrices(), 1000 * 20);
     return () => clearInterval(intervalID);
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setTitle(
-      navigation.find((route) => route.path === location.pathname).name ||
+      navigation.find((route) => route.path.includes(location.pathname).name) ||
         'Error Getting Title'
     );
   }, [location]);
@@ -256,7 +258,15 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/blightsources' element={<Blightsources />} />
-            <Route path='/market' element={<Market />} />
+            <Route
+              path='/market/:category/:subcategory/:blightsourceName'
+              element={<BlightsourceSubcategoryReadout />}
+            />
+            <Route
+              path='/market/:category/:subcategory'
+              element={<BlightsourceReadout />}
+            />
+            {/* <Route path='/market' element={<Market />} /> */}
             <Route path='/info' element={<Information />} />
           </Routes>
           {/* /End replace */}
@@ -267,3 +277,4 @@ function App() {
 }
 
 export default App;
+

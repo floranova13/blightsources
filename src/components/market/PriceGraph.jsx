@@ -9,7 +9,7 @@ const PriceGraph = ({ blightsourceName, height, width }) => {
 
   return (
     <div className='text-center inline-block'>
-      <h2 className='text-gray-500 text-2xl font-bold inline'>
+      <h2 className='text-gray-300 text-2xl font-bold inline'>
         {toTitleCase(blightsourceName)}
       </h2>
       {!isBlightsourceLoading && (

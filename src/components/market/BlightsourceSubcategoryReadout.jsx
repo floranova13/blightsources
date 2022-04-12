@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { toTitleCase } from '../../utils';
-import {
-  getBlightsourceNamesBySubcategory,
-  getCategoryBySubcategory,
-} from '../../utils/blightsources';
-import { getRecentPrices } from '../../utils/prices'
+import { getBlightsourceNamesBySubcategory } from '../../utils/blightsources';
+import { getRecentPrices } from '../../utils/prices';
 import PriceGraph from './PriceGraph';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useGetBlightsources } from '../../hooks/blightsources';
 
-const BlightsourceSubcategoryReadouts = ({ subcategory }) => {
-  const category = getCategoryBySubcategory(subcategory);
+const BlightsourceSubcategoryReadouts = () => {
+  let { category, subcategory } = useParams();
+  console.log('category', category);
+  const navigate = useNavigate();
   const blightsources = getBlightsourceNamesBySubcategory(subcategory);
   const { data: prices, isLoading } = useGetBlightsources();
   const [averagePrice, setAveragePrice] = useState('');
@@ -25,55 +24,67 @@ const BlightsourceSubcategoryReadouts = ({ subcategory }) => {
       }, 0);
       const totalPerformance = blightsources.reduce((previous, current) => {
         const recentPrices = getRecentPrices(prices[current]);
-        const difference = prices[current].currentPrice - recentPrices[recentPrices.length - 1];
-        const percentage = difference / recentPrices[recentPrices.length - 1] * 100;
+        const difference =
+          prices[current].currentPrice - recentPrices[recentPrices.length - 2];
+        const percentage =
+          (difference / recentPrices[recentPrices.length - 2]) * 100;
         return previous + percentage;
       }, 0);
-      setAveragePrice(Math.round((totalPrice + Number.EPSILON) * 100 / blightsources.length) / 100);
-      setAveragePerformance(Math.round((totalPerformance + Number.EPSILON) * 100 / blightsources.length) / 100);
+      setAveragePrice(
+        Math.round(
+          ((totalPrice + Number.EPSILON) * 100) / blightsources.length
+        ) / 100
+      );
+      setAveragePerformance(
+        Math.round(
+          ((totalPerformance + Number.EPSILON) * 100) / blightsources.length
+        ) / 100
+      );
     }
   }, [prices, isLoading]);
 
-  const navigate = useNavigate();
+  const getPriceString = (n) => `${n} coins`;
+
+  const getPercentageString = (n) => (n > 0 ? `+${n}%` : `${n}%`);
 
   return (
     <div className='text-center my-3'>
-      <div className='bg-white shadow overflow-hidden sm:rounded-lg'>
+      <div className='bg-indigo-900 bg-opacity-5 shadow overflow-hidden sm:rounded-lg'>
         <div className='px-4 py-5 sm:px-6'>
-          <h3 className='text-lg leading-6 font-medium text-gray-900'>
+          <h3 className='text-lg leading-6 font-medium text-white'>
             {toTitleCase(subcategory)}
           </h3>
-          <p className='mt-1 max-w-2xl text-sm text-gray-500'>
+          <p className='mt-1 max-w-2xl text-sm text-gray-400'>
             General market information.
           </p>
         </div>
         <div className='border-t border-gray-200 px-4 py-5 sm:px-6'>
           <dl className='grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2'>
             <div className='sm:col-span-1'>
-              <dt className='text-sm font-medium text-gray-500'>
-                Average Price
-              </dt>
-              <dd className='mt-1 text-sm text-gray-900'>{averagePrice}</dd>
+              <dt className='text-sm font-medium text-white'>Average Price</dt>
+              <dd className='mt-1 text-sm text-gray-400'>{`${getPriceString(
+                averagePrice
+              )}`}</dd>
             </div>
             <div className='sm:col-span-1'>
-              <dt className='text-sm font-medium text-gray-500'>
+              <dt className='text-sm font-medium text-white'>
                 Average Performance
               </dt>
-              <dd className='mt-1 text-sm text-gray-900'>{averagePerformance}</dd>
+              <dd className='mt-1 text-sm text-gray-400'>{`${getPercentageString(
+                averagePerformance
+              )}`}</dd>
             </div>
             <div className='sm:col-span-1'>
-              <dt className='text-sm font-medium text-gray-500'>X</dt>
-              <dd className='mt-1 text-sm text-gray-900'>{averagePrice}</dd>
+              <dt className='text-sm font-medium text-white'>X</dt>
+              <dd className='mt-1 text-sm text-gray-400'>{averagePrice}</dd>
             </div>
             <div className='sm:col-span-1'>
-              <dt className='text-sm font-medium text-gray-500'>Y</dt>
-              <dd className='mt-1 text-sm text-gray-900'>{averagePrice}</dd>
+              <dt className='text-sm font-medium text-white'>Y</dt>
+              <dd className='mt-1 text-sm text-gray-400'>{averagePrice}</dd>
             </div>
             <div className='sm:col-span-2'>
-              <dt className='text-sm font-medium text-gray-500'>
-                Individual Charts
-              </dt>
-              <dd className='mt-1 text-sm text-gray-900'>
+              <dt className='text-sm font-medium text-white'>Z</dt>
+              <dd className='mt-1 text-sm text-gray-400'>
                 Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim
                 incididunt cillum culpa consequat. Excepteur qui ipsum aliquip
                 consequat sint. Sit id mollit nulla mollit nostrud in ea officia
@@ -82,7 +93,7 @@ const BlightsourceSubcategoryReadouts = ({ subcategory }) => {
               </dd>
             </div>
             <div className='sm:col-span-2'>
-              <dt className='text-sm font-medium text-gray-500'>
+              <dt className='text-sm font-medium text-white'>
                 Individual Charts
               </dt>
               <dd className='mt-1 text-sm text-gray-900'>

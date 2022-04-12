@@ -36,7 +36,8 @@ export const getBlightsources = (category = '', subcategory = '') => {
   return blightsourceArray.filter(
     (b) =>
       (!category || b.category.toLowerCase() === category.toLowerCase()) &&
-      (!subcategory || b.subcategory.toLowerCase() === subcategory.toLowerCase())
+      (!subcategory ||
+        b.subcategory.toLowerCase() === subcategory.toLowerCase())
   );
 };
 
@@ -54,3 +55,6 @@ export const getBlightsourceNamesBySubcategory = (s) => {
   const category = getCategoryBySubcategory(s);
   return getBlightsources(category, s).map((b) => b.name.toLowerCase());
 };
+
+export const getBlightsourceByName = (s) =>
+  getBlightsources().find((b) => b.name === s);
