@@ -9,4 +9,4 @@ export function getRandomInt(min, max) {
 }
 
 export const toTitleCase = (s) =>
-  s && s.length >= 1 ? s[0].toUpperCase() + s.slice(1) : s;
+  s && s.length >= 1 ? s.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ') : s;

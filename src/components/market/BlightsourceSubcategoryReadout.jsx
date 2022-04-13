@@ -6,9 +6,8 @@ import PriceGraph from './PriceGraph';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useGetBlightsources } from '../../hooks/blightsources';
 
-const BlightsourceSubcategoryReadouts = () => {
+const BlightsourceSubcategoryReadout = () => {
   let { category, subcategory } = useParams();
-  console.log('category', category);
   const navigate = useNavigate();
   const blightsources = getBlightsourceNamesBySubcategory(subcategory);
   const { data: prices, isLoading } = useGetBlightsources();
@@ -140,4 +139,4 @@ const BlightsourceSubcategoryReadouts = () => {
   );
 };
 
-export default BlightsourceSubcategoryReadouts;
+export default BlightsourceSubcategoryReadout;

@@ -10,10 +10,6 @@ const Market = () => {
 
   return (
     <div className=''>
-      {/* {!isBlightsourceLoading && <h1>{ price.priceHistory.join(', ') }</h1>}
-      {!isBlightsourcesLoading && <h1>{JSON.stringify(prices.map(b => ))}</h1>} */}
-      {/* <PriceGraph blightsourceName='forslone' /> */}
-      {/* <BlightsourceReadout blightsourceName='forslone' /> */}
       <BlightsourceSubcategoryReadouts subcategory='blightfoils' />
     </div>
   );

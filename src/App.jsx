@@ -22,6 +22,8 @@ import Blightsources from './pages/Blightsources';
 import Information from './pages/Information';
 import BlightsourceReadout from './components/market/BlightsourceReadout';
 import BlightsourceSubcategoryReadout from './components/market/BlightsourceSubcategoryReadout';
+import BlightsourceCategoryReadout from './components/market/BlightsourceCategoryReadout';
+import Profile from './pages/Profile';
 import { useUpdatePrices } from './hooks/blightsources';
 
 const user = {
@@ -30,15 +32,17 @@ const user = {
   coins: '100',
   imageUrl:
     'https://images.unsplash.com/photo-1627645835237-0743e52b991f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80&auto=format&fit=crop&w=880&q=80',
+  about:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit explicabo ex eligendi minima! Tenetur explicabo officia non, similique enim veritatis.',
 };
 const navigation = [
-  { name: 'Home', path: '/' },
   { name: 'Blightsources', path: '/blightsources' },
   { name: 'Market', path: '/market' },
   { name: 'Information', path: '/info' },
+  { name: 'Home', path: '/' },
 ];
 const userNavigation = [
-  { name: 'Your Profile', path: '/profile' },
+  { name: 'Profile', path: '/profile' },
   { name: 'Settings', path: '/settings' },
 ];
 const getIcon = {
@@ -67,7 +71,10 @@ function App() {
 
   useEffect(() => {
     setTitle(
-      navigation.find((route) => route.path.includes(location.pathname).name) ||
+      userNavigation.find((route) => location.pathname.includes(route.path))
+        ?.name ||
+        navigation.find((route) => location.pathname.includes(route.path))
+          ?.name ||
         'Error Getting Title'
     );
   }, [location]);
@@ -260,14 +267,19 @@ function App() {
             <Route path='/blightsources' element={<Blightsources />} />
             <Route
               path='/market/:category/:subcategory/:blightsourceName'
-              element={<BlightsourceSubcategoryReadout />}
+              element={<BlightsourceReadout />}
             />
             <Route
               path='/market/:category/:subcategory'
-              element={<BlightsourceReadout />}
+              element={<BlightsourceSubcategoryReadout />}
+            />
+            <Route
+              path='/market/:category'
+              element={<BlightsourceCategoryReadout />}
             />
             {/* <Route path='/market' element={<Market />} /> */}
             <Route path='/info' element={<Information />} />
+            <Route path='/profile' element={<Profile user={user} />} />
           </Routes>
           {/* /End replace */}
         </div>

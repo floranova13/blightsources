@@ -6,7 +6,7 @@ export const useGetBlightsources = () => {
 };
 
 export const useGetBlightsource = (name) => {
-  return useQuery(['blightsource', name], () => getPrice(name));
+  return useQuery(['blightsource', name.toLowerCase()], () => getPrice(name));
 };
 
 export const useUpdatePrices = () => {
