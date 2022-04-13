@@ -2,6 +2,7 @@ import React from 'react';
 import { useGetBlightsource } from '../../hooks/blightsources';
 import SimpleAreaChart from './SimpleAreaChart';
 import { toTitleCase } from '../../utils';
+import { getRecentPrices } from '../../utils/prices';
 
 const PriceGraph = ({ blightsourceName, height, width }) => {
   const { data: price, isLoading: isBlightsourceLoading } =
@@ -15,7 +16,7 @@ const PriceGraph = ({ blightsourceName, height, width }) => {
       {!isBlightsourceLoading && (
         <SimpleAreaChart
           key={price.priceHistory.length}
-          data={price.priceHistory.slice(-6).map((p, i) => {
+          data={getRecentPrices(price).map((p, i) => {
             return { name: `T${i}`, coins: p };
           })}
           height={height}

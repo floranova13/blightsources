@@ -12,7 +12,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightstones",
@@ -24,7 +24,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightstones",
@@ -36,7 +36,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "crystali": [
@@ -50,7 +50,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightstones",
@@ -62,7 +62,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightstones",
@@ -74,7 +74,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "lylodes": [
@@ -88,7 +88,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightstones",
@@ -100,7 +100,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightstones",
@@ -112,7 +112,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ]
     },
@@ -128,7 +128,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightichors",
@@ -140,7 +140,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightichors",
@@ -152,7 +152,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "blightvenoms": [
@@ -166,7 +166,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightichors",
@@ -178,7 +178,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightichors",
@@ -190,7 +190,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "blightmares": [
@@ -204,7 +204,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightichors",
@@ -216,7 +216,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightichors",
@@ -228,7 +228,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ]
     },
@@ -244,7 +244,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfumes",
@@ -256,7 +256,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfumes",
@@ -268,7 +268,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "miasmeta": [
@@ -282,7 +282,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfumes",
@@ -294,7 +294,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfumes",
@@ -306,7 +306,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "blightmists": [
@@ -320,7 +320,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfumes",
@@ -332,7 +332,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfumes",
@@ -344,7 +344,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ]
     },
@@ -360,7 +360,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightflora",
@@ -372,7 +372,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightflora",
@@ -384,7 +384,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "blightpillars": [
@@ -398,7 +398,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightflora",
@@ -410,7 +410,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightflora",
@@ -422,7 +422,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "blightsnarls": [
@@ -436,7 +436,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightflora",
@@ -448,7 +448,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightflora",
@@ -460,7 +460,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ]
     },
@@ -476,7 +476,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfungi",
@@ -488,7 +488,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfungi",
@@ -500,7 +500,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "blightbleeds": [
@@ -514,7 +514,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfungi",
@@ -526,7 +526,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfungi",
@@ -538,7 +538,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "sporesprawls": [
@@ -552,7 +552,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfungi",
@@ -564,7 +564,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightfungi",
@@ -576,7 +576,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ]
     },
@@ -592,7 +592,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightanomalies",
@@ -604,7 +604,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightanomalies",
@@ -616,7 +616,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "loci": [
@@ -630,7 +630,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightanomalies",
@@ -642,7 +642,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightanomalies",
@@ -654,7 +654,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ],
       "vestiges": [
@@ -668,7 +668,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightanomalies",
@@ -680,7 +680,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         },
         {
           "category": "Blightanomalies",
@@ -692,7 +692,7 @@
           ],
           "introduced": 1,
           "basevalue": -1,
-          "currentvalue": -1
+          "volatility": "volatile"
         }
       ]
     }
