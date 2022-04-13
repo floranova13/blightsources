@@ -20,13 +20,9 @@ const BlightsourceReadout = () => {
     if (!isLoading) {
       setBlightsource(getBlightsourceByName(blightsourceName));
       const recentPrices = getRecentPrices(price);
-      const difference =
-        price.currentPrice - recentPrices[recentPrices.length - 2];
-      const percentage =
-        (difference / recentPrices[recentPrices.length - 2]) * 100;
-      setBlightsourcePrice(
-        Math.round((price.currentPrice + Number.EPSILON) * 100) / 100
-      );
+      const difference = price.currentPrice - recentPrices[0];
+      const percentage = (difference / recentPrices[0]) * 100;
+      setBlightsourcePrice(price.currentPrice);
       setBlightsourcePerformance(
         Math.round((percentage + Number.EPSILON) * 100) / 100
       );
@@ -39,9 +35,9 @@ const BlightsourceReadout = () => {
 
   return (
     <div className='text-center my-3'>
-      <div className='bg-indigo-900 bg-opacity-5 shadow overflow-hidden sm:rounded-lg'>
+      <div className='bg-indigo-900 bg-opacity-50 shadow overflow-hidden sm:rounded-lg'>
         <div className='px-4 py-5 sm:px-6'>
-          <h3 className='text-lg leading-6 font-medium text-white'>
+          <h3 className='text-2xl leading-6 font-bold text-white pb-3'>
             {toTitleCase(blightsource?.subcategory)}
           </h3>
           <p className='mt-1 max-w-2xl text-sm text-gray-400'>

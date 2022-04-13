@@ -6,10 +6,10 @@ import info from '../resources/blightsources.json';
 const BlightsourceSubcategoryCards = ({ category, categorySetter, subcategorySetter }) => {
   return (
     <>
-      <div className='blightsource-nav-container mb-4'>
+      <div className='blightsource-nav-container'>
         <button
           type='button'
-          className='px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-32 text-center'
+          className='px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-32 text-center absolute top-32 right-56'
           onClick={() => categorySetter('')}
         >
           Back

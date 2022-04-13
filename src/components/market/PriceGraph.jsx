@@ -1,18 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGetBlightsource } from '../../hooks/blightsources';
 import SimpleAreaChart from './SimpleAreaChart';
 import { toTitleCase } from '../../utils';
 import { getRecentPrices } from '../../utils/prices';
+import { getBlightsourceByName } from '../../utils/blightsources';
+import { Link } from 'react-router-dom';
+
+const getBlightsourceUrl = (s) => {
+  const b = getBlightsourceByName(s);
+  const cat = b.category.toLowerCase();
+  const subcat = b.subcategory.toLowerCase();
+  return `/market/${cat}/${subcat}/${s}`;
+};
 
 const PriceGraph = ({ blightsourceName, height, width }) => {
   const { data: price, isLoading: isBlightsourceLoading } =
     useGetBlightsource(blightsourceName);
+  const [blightsource, setBlightsource] = useState(null);
+
+  useEffect(() => {
+    // REMOVE???
+    if (!isBlightsourceLoading) {
+      setBlightsource(getBlightsourceByName(blightsourceName));
+    }
+  }, [isBlightsourceLoading, blightsourceName]);
 
   return (
     <div className='text-center inline-block'>
-      <h2 className='text-gray-300 text-2xl font-bold inline'>
-        {toTitleCase(blightsourceName)}
-      </h2>
+      {blightsource && (
+        <Link
+          to={getBlightsourceUrl(blightsourceName)}
+          className='text-gray-500 text-2xl font-bold transition-all duration-1000 inline hover:text-white hover:em'
+        >
+          {toTitleCase(blightsourceName)}
+        </Link>
+      )}
       {!isBlightsourceLoading && (
         <SimpleAreaChart
           key={price.priceHistory.length}

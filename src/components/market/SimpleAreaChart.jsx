@@ -31,7 +31,7 @@ const SimpleAreaChart = ({ data, width, height }) => {
         }}
       >
         <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='name' />
+        <XAxis dataKey='name' tick={false} />
         <YAxis />
         <Tooltip />
         <Area type='monotone' dataKey='coins' stroke='#8884d8' fill='#8884d8' />
