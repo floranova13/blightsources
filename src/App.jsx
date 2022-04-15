@@ -277,7 +277,7 @@ function App() {
               path='/market/:category'
               element={<BlightsourceCategoryReadout />}
             />
-            {/* <Route path='/market' element={<Market />} /> */}
+            <Route path='/market' element={<Market />} />
             <Route path='/info' element={<Information />} />
             <Route path='/profile' element={<Profile user={user} />} />
           </Routes>
