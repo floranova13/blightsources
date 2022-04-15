@@ -1,37 +1,37 @@
 import React from 'react';
-import { PaperClipIcon } from '@heroicons/react/solid';
+import Icon from '../components/Icon';
 import { useGetResources } from '../hooks/resources';
 import { toTitleCase } from '../utils';
 import { getBlightsourceByName } from '../utils/blightsources';
 import { Link } from 'react-router-dom';
-import {
-  GiStoneBlock,
-  GiBottleVapors,
-  GiPlantSeed,
-  GiMushroomsCluster,
-  GiStarSwirl,
-} from 'react-icons/gi';
-import { IoFlaskSharp } from 'react-icons/io5';
+// import {
+//   GiStoneBlock,
+//   GiBottleVapors,
+//   GiPlantSeed,
+//   GiMushroomsCluster,
+//   GiStarSwirl,
+// } from 'react-icons/gi';
+// import { IoFlaskSharp } from 'react-icons/io5';
 
-const getIcon = (s) => {
-  // TODO: Get icons for each subcategory
-  switch (s) {
-    case 'blightstones':
-      return <GiStoneBlock />;
-    case 'blightichors':
-      return <IoFlaskSharp />;
-    case 'blightfumes':
-      return <GiBottleVapors />;
-    case 'blightflora':
-      return <GiPlantSeed />;
-    case 'blightfungi':
-      return <GiMushroomsCluster />;
-    case 'blightanomalies':
-      return <GiStarSwirl />;
-    default:
-      return <></>;
-  }
-};
+// const getIcon = (s) => {
+//   // TODO: Get icons for each subcategory
+//   switch (s) {
+//     case 'blightstones':
+//       return <GiStoneBlock />;
+//     case 'blightichors':
+//       return <IoFlaskSharp />;
+//     case 'blightfumes':
+//       return <GiBottleVapors />;
+//     case 'blightflora':
+//       return <GiPlantSeed />;
+//     case 'blightfungi':
+//       return <GiMushroomsCluster />;
+//     case 'blightanomalies':
+//       return <GiStarSwirl />;
+//     default:
+//       return <></>;
+//   }
+// };
 
 const Profile = ({ user }) => {
   const { data: resources, isLoading } = useGetResources();
@@ -77,6 +77,8 @@ const Profile = ({ user }) => {
                 {!isLoading &&
                   resources.map((r, i) => {
                     const blightsource = getBlightsourceByName(r.name);
+                    const category = blightsource.category.toLowerCase();
+                    const subcategory = blightsource.subcategory.toLowerCase();
 
                     return (
                       <li
@@ -84,13 +86,14 @@ const Profile = ({ user }) => {
                         className='pl-3 pr-4 py-3 flex items-center justify-between text-sm'
                       >
                         <div className='w-0 flex-1 flex items-center'>
-                          {getIcon(blightsource.category.toLowerCase())}
+                          <Icon icon={subcategory} />
+                          {/* {getIcon(blightsource.category.toLowerCase())} */}
                           {/* <PaperClipIcon
                             className='flex-shrink-0 h-5 w-5 text-gray-400'
                             aria-hidden='true'
                           /> */}
                           <span className='ml-2 flex-1 w-0 truncate'>
-                            {`${toTitleCase(r.name)} (${r.count})`}
+                            {`${toTitleCase(r.name)} - (${r.count})`}
                           </span>
                         </div>
                         <div className='ml-4 flex-shrink-0'>

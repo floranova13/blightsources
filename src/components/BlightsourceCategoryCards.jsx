@@ -6,6 +6,11 @@ import info from '../resources/blightsources.json';
 const BlightsourceCategoryCards = ({ categorySetter }) => {
   return (
     <>
+          <div className='blightsource-nav-container'>
+        <h2 className='inline-block text-white text-2xl font-bold mb-9'>
+          Classification Categories
+        </h2>
+      </div>
       <ul className='space-y-3'>
         {info.information.map((category, i) => (
           <li

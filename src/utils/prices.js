@@ -510,3 +510,21 @@ export const getRecentPrices = (price) => {
 
   return priceArr;
 };
+
+export const getBlightsourceStats = (price, round = false) => {
+  const recentPrices = getRecentPrices(price);
+  const difference = price.currentPrice - recentPrices[0];
+  const overallDifference = price.currentPrice - price.basePrice;
+  const percentage = (difference / recentPrices[0]) * 100;
+  const overallPercentage = (overallDifference / price.basePrice) * 100;
+  const performance = round
+    ? Math.round((percentage + Number.EPSILON) * 100) / 100
+    : percentage;
+  const overallPerformance = round
+    ? Math.round((overallPercentage + Number.EPSILON) * 100) / 100
+    : overallPercentage;
+
+  return { performance, overallPerformance };
+};
+
+export const getAverage

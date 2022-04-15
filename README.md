@@ -3,6 +3,7 @@
 ## Packages to incorporate:
 
 - https://github.com/woofers/react-wavify
+- https://www.npmjs.com/package/react-tooltip (incorporated, but customize further)
 
 ## Notes
 
