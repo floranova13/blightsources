@@ -1,5 +1,9 @@
-import { getBlightsourceByName } from './blightsources';
-import { getRandomInt, clamp } from './index';
+import {
+  getBlightsourceByName,
+  getBlightsourceNamesByCategory,
+  getBlightsourceNamesBySubcategory,
+} from './blightsources';
+import { getRandomInt, clamp, getMean, getMedian } from './index';
 
 let prices = {
   'forslone': {
@@ -497,14 +501,10 @@ export const updatePrices = () => {
   prices = newPrices;
 };
 
-export const getRecentPrices = (price) => {
-  const numberOfPrices = 30;
+export const getRecentPrices = (price, numRecent = 30) => {
   const priceArr = [];
-  for (
-    let i = price.priceHistory.length - (1 + numberOfPrices);
-    i < price.priceHistory.length;
-    i++
-  ) {
+  const len = price.priceHistory.length;
+  for (let i = len - (1 + numRecent); i < len; i++) {
     priceArr.push(price.priceHistory[i]);
   }
 
@@ -513,6 +513,10 @@ export const getRecentPrices = (price) => {
 
 export const getBlightsourceStats = (price, round = false) => {
   const recentPrices = getRecentPrices(price);
+  const averagePrice = getMean(recentPrices);
+  const overallAveragePrice = getMean(price.priceHistory);
+  const medianPrice = getMedian(recentPrices);
+  const overallMedianPrice = getMedian(price.priceHistory);
   const difference = price.currentPrice - recentPrices[0];
   const overallDifference = price.currentPrice - price.basePrice;
   const percentage = (difference / recentPrices[0]) * 100;
@@ -524,7 +528,78 @@ export const getBlightsourceStats = (price, round = false) => {
     ? Math.round((overallPercentage + Number.EPSILON) * 100) / 100
     : overallPercentage;
 
-  return { performance, overallPerformance };
+  return {
+    performance,
+    overallPerformance,
+    averagePrice,
+    medianPrice,
+    overallAveragePrice,
+    overallMedianPrice,
+  };
 };
 
-export const getAverage
+const getCombinedBlightsourceStats = (
+  prices,
+  blightsourceNames,
+  round = false
+) => {
+  let performance = 0;
+  let overallPerformance = 0;
+  let averagePrice = 0;
+  let medianPrice = 0;
+  let overallAveragePrice = 0;
+  let overallMedianPrice = 0;
+  const nameArr = blightsourceNames.map((s) => s.toLowerCase());
+
+  for (let i = 0; i < nameArr.length; i++) {
+    const stats = getBlightsourceStats(prices[nameArr[0]], false);
+    performance += stats.performance;
+    overallPerformance += stats.overallPerformance;
+    averagePrice += stats.averagePrice;
+    medianPrice += stats.medianPrice;
+    overallAveragePrice += stats.overallAveragePrice;
+    overallMedianPrice += stats.overallMedianPrice;
+  }
+
+  performance /= nameArr.length;
+  overallPerformance /= nameArr.length;
+  averagePrice /= nameArr.length;
+  medianPrice /= nameArr.length;
+  overallAveragePrice /= nameArr.length;
+  overallMedianPrice /= nameArr.length;
+
+  if (round) {
+    performance = Math.round((performance + Number.EPSILON) * 100) / 100;
+    overallPerformance =
+      Math.round((overallPerformance + Number.EPSILON) * 100) / 100;
+    averagePrice = Math.round((averagePrice + Number.EPSILON) * 100) / 100;
+    medianPrice = Math.round((medianPrice + Number.EPSILON) * 100) / 100;
+    overallAveragePrice =
+      Math.round((overallAveragePrice + Number.EPSILON) * 100) / 100;
+    overallMedianPrice =
+      Math.round((overallMedianPrice + Number.EPSILON) * 100) / 100;
+  }
+
+  return {
+    performance,
+    overallPerformance,
+    averagePrice,
+    medianPrice,
+    overallAveragePrice,
+    overallMedianPrice,
+  };
+};
+
+export const getCombinedSubcategoryStats = (
+  subcategory,
+  prices,
+  round = false
+) => {
+  const blightsourceNameArr = getBlightsourceNamesBySubcategory(subcategory);
+  return getCombinedBlightsourceStats(blightsourceNameArr, prices, round);
+};
+
+export const getCombinedCategoryStats = (category, prices, round = false) => {
+  const blightsourceNameArr = getBlightsourceNamesByCategory(category);
+  return getCombinedBlightsourceStats(blightsourceNameArr, prices, round);
+};
