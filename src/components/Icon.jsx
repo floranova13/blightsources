@@ -15,6 +15,7 @@ import {
   GiPoisonGas,
   GiFog,
   GiVineFlower,
+  GiMushrooms,
   GiBleedingWound,
   GiPollenDust,
   GiStoneSphere,
@@ -31,64 +32,66 @@ const getIcon = (s) => {
     case 'coin':
       return <GiTwoCoins />;
     case 'blightstones':
-      return <GiStoneBlock />;
+      return <GiStoneBlock color='#8ac4ffff' />;
     case 'blightichors':
-      return <IoFlaskSharp />;
+      return <IoFlaskSharp color='#2b3a67ff' />;
     case 'blightfumes':
-      return <GiBottleVapors />;
+      return <GiBottleVapors color='#f7b2b7ff' />;
     case 'blightflora':
-      return <GiPlantSeed />;
+      return <GiPlantSeed color='#132a13ff' />;
     case 'blightfungi':
-      return <GiMushroomsCluster />;
+      return <GiMushroomsCluster color='#c5efcbff' />;
     case 'blightanomalies':
-      return <GiStarSwirl />;
+      return <GiStarSwirl color='#432534ff' />;
     case 'blightfoils':
-      return <GiMetalBar />;
+      return <GiMetalBar color='#8ac4ffff' />;
     case 'crystali':
-      return <GiCrystalGrowth />;
+      return <GiCrystalGrowth color='#8ac4ffff' />;
     case 'leylodes':
-      return <GiStoneTablet />;
+      return <GiStoneTablet color='#8ac4ffff' />;
     case 'lifeblight':
-      return <GiHealthPotion />;
+      return <GiHealthPotion color='#2b3a67ff' />;
     case 'blightvenoms':
-      return <GiPoisonBottle />;
+      return <GiPoisonBottle color='#2b3a67ff' />;
     case 'blightmares':
-      return <GiFlameSpin />;
+      return <GiFlameSpin color='#2b3a67ff' />;
     case 'rushblight':
-      return <GiPerfumeBottle />;
+      return <GiPerfumeBottle color='#f7b2b7ff' />;
     case 'miasmeta':
-      return <GiPoisonGas />;
+      return <GiPoisonGas color='#f7b2b7ff' />;
     case 'blightmists':
-      return <GiFog />;
+      return <GiFog color='#f7b2b7ff' />;
     case 'blightblooms':
-      return <GiPlantSeed />;
+      return <GiPlantSeed color='#132a13ff' />;
     case 'blightpillars':
-      return <GiMushroomsCluster />;
+      return <GiVineFlower color='#132a13ff' />;
     case 'blightsnarls':
-      return <GiStarSwirl />;
+      return <GiStarSwirl color='#132a13ff' />;
     case 'blightshrooms':
-      return <GiVineFlower />;
+      return <GiMushrooms color='#c5efcbff' />;
     case 'blightbleeds':
-      return <GiBleedingWound />;
+      return <GiBleedingWound color='#c5efcbff' />;
     case 'sporesprawls':
-      return <GiPollenDust />;
+      return <GiPollenDust color='#c5efcbff' />;
     case 'tokens':
-      return <GiStoneSphere />;
+      return <GiStoneSphere color='#432534ff' />;
     case 'loci':
-      return <GiBallGlow />;
+      return <GiBallGlow color='#432534ff' />;
     case 'vestiges':
-      return <GiGlowingArtifact />;
+      return <GiGlowingArtifact color='#432534ff' />;
     default:
       return <></>;
   }
 };
 
-const Icon = ({ icon }) => {
+const Icon = ({ icon, classes }) => {
   console.log(icon);
 
   return (
     <>
-      <div data-tip={toTitleCase(icon)}>{getIcon(icon)}</div>
+      <div className={`inline-block ${classes}`} data-tip={toTitleCase(icon)}>
+        {getIcon(icon)}
+      </div>
       <ReactTooltip />
     </>
   );

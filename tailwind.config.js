@@ -937,13 +937,15 @@ module.exports = {
   ],
   extend: {
     colors: {
-      blightstone: '#8ac4ffff',
-      blightichor: '#2b3a67ff',
-      blightfume: '#f7b2b7ff',
+      blightstones: '#8ac4ffff',
+      blightichors: '#2b3a67ff',
+      blightfumes: '#f7b2b7ff',
       blightflora: '#132a13ff',
       blightfungi: '#c5efcbff',
-      blightanomoly: '#432534ff',
+      blightanomalies: '#432534ff',
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

@@ -37,7 +37,7 @@ const Profile = ({ user }) => {
   const { data: resources, isLoading } = useGetResources();
 
   return (
-    <div className='bg-indigo-900 bg-opacity-5 shadow text-white overflow-hidden sm:rounded-lg'>
+    <div className='shadow text-white overflow-hidden sm:rounded-lg'>
       <div className='px-4 py-5 sm:px-6'>
         <h3 className='text-lg leading-6 font-medium'>Merchant Information</h3>
         <p className='mt-1 max-w-2xl text-sm text-gray-300'>
@@ -60,8 +60,9 @@ const Profile = ({ user }) => {
           </div>
           <div className='py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6'>
             <dt className='text-sm font-medium'>Wealth</dt>
-            <dd className='mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2'>
-              {`${user.coins} coin${user.coins !== 1 && 's'}`}
+            <dd className='mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2 inline-block'>
+              {`${user.coins}  `}
+              <Icon classes='m-auto h-3' icon={'coin'} />
             </dd>
           </div>
           <div className='py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6'>
@@ -73,7 +74,7 @@ const Profile = ({ user }) => {
           <div className='py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6'>
             <dt className='text-sm font-medium'>Resources</dt>
             <dd className='mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2'>
-              <ul className='border border-gray-900 rounded-md divide-y divide-gray-900'>
+              <ul className='bg-gray-400 border border-gray-900 rounded-md divide-y divide-gray-900'>
                 {!isLoading &&
                   resources.map((r, i) => {
                     const blightsource = getBlightsourceByName(r.name);
@@ -83,7 +84,7 @@ const Profile = ({ user }) => {
                     return (
                       <li
                         key={`${r.name}-resource`}
-                        className='pl-3 pr-4 py-3 flex items-center justify-between text-sm'
+                        className='text-black pl-3 pr-4 py-3 flex items-center justify-between text-sm'
                       >
                         <div className='w-0 flex-1 flex items-center'>
                           <Icon icon={subcategory} />
@@ -99,7 +100,7 @@ const Profile = ({ user }) => {
                         <div className='ml-4 flex-shrink-0'>
                           <Link
                             to={`/market/${blightsource.category}/${blightsource.subcategory}/${r.name}`}
-                            className='font-medium text-indigo-600 hover:text-indigo-500'
+                            className='font-bold text-purple-900 hover:text-indigo-500' // TODO: replace with icon!!!!!!
                           >
                             Market Data
                           </Link>

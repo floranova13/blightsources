@@ -2,53 +2,68 @@ import React, { useState, useEffect } from 'react';
 import { useGetBlightsources } from '../../hooks/blightsources';
 import SimpleAreaChart from './SimpleAreaChart';
 import { toTitleCase } from '../../utils';
-import { getRecentPrices } from '../../utils/prices';
+import {
+  getRecentPrices,
+  getBlightsourceStats,
+  getCombinedCategoryStats,
+  getCombinedSubcategoryStats,
+} from '../../utils/prices';
 import {
   getBlightsourceByName,
+  getCategoryBySubcategory,
   getBlightsourceNamesBySubcategory,
   getBlightsourceNamesByCategory,
 } from '../../utils/blightsources';
 import { Link } from 'react-router-dom';
 
-const getPerformance = (prices, type, filter) => {
-  let bArr = [];
+const getPerformanceArr = (prices, type, filter) => {
   switch (type) {
     case 'category':
-      break;
+      return getCombinedCategoryStats(filter, prices, true).performanceArr;
     case 'subcategory':
-      break;
+      return getCombinedSubcategoryStats(filter, prices, true).performanceArr;
     case 'blightsource':
-      break;
+      return getBlightsourceStats(prices[filter], true).performanceArr;
     default:
-      break;
+      return [];
   }
 };
 
-const getBlightsourceUrl = (s) => {
-  const b = getBlightsourceByName(s);
-  const cat = b.category.toLowerCase();
-  const subcat = b.subcategory.toLowerCase();
-  return `/market/${cat}/${subcat}/${s}`;
+const getBlightsourceUrl = (s, type) => {
+  switch (type) {
+    case 'category':
+      return `/market/${s}`;
+    case 'subcategory':
+      const cat = getCategoryBySubcategory(s).toLowerCase();
+      return `/market/${cat}/${s}`;
+    case 'blightsource':
+      const b = getBlightsourceByName(s);
+      const c = b.category.toLowerCase();
+      const sub = b.subcategory.toLowerCase();
+      return `/market/${c}/${sub}/${s}`;
+    default:
+      return '';
+  }
 };
 
 const PriceGraph = ({ filter, type, height, width }) => {
-  const { data: price, isLoading } = useGetBlightsources();
+  const { data: prices, isLoading } = useGetBlightsources();
 
   return (
     <div className='text-center inline-block'>
       {!isLoading && (
         <Link
-          to={getBlightsourceUrl('x')} // fix
+          to={getBlightsourceUrl(filter, type)}
           className='text-gray-500 text-2xl font-bold transition-all duration-1000 inline hover:text-white hover:em'
         >
-          {toTitleCase('x') /* fix */}
+          {toTitleCase(filter)}
         </Link>
       )}
       {!isLoading && (
         <SimpleAreaChart
-          key={price.priceHistory.length}
-          data={getRecentPrices(price).map((p, i) => {
-            return { name: `T${i}`, coins: p };
+          key={prices.priceHistory.length}
+          data={getPerformanceArr(prices, type, filter).map((p, i) => {
+            return { name: `T${i}`, '%': p }; // TODO: MAKE SURE SIMPLEAREACHART KNOWS WHAT KEY TO USE
           })}
           height={height}
           width={width}

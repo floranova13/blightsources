@@ -528,6 +528,18 @@ export const getBlightsourceStats = (price, round = false) => {
     ? Math.round((overallPercentage + Number.EPSILON) * 100) / 100
     : overallPercentage;
 
+  const performanceArr = [];
+
+  for (let i = 0; i < recentPrices.length; i++) {
+    const currentOverallDifference = recentPrices[i] - price.basePrice;
+    const currentOverallPercentage =
+      (currentOverallDifference / price.basePrice) * 100;
+    const currentOverallPerformance = round
+      ? Math.round((currentOverallPercentage + Number.EPSILON) * 100) / 100
+      : currentOverallPercentage;
+    performanceArr.push(currentOverallPerformance);
+  }
+
   return {
     performance,
     overallPerformance,
@@ -535,6 +547,7 @@ export const getBlightsourceStats = (price, round = false) => {
     medianPrice,
     overallAveragePrice,
     overallMedianPrice,
+    performanceArr,
   };
 };
 
@@ -543,12 +556,17 @@ const getCombinedBlightsourceStats = (
   blightsourceNames,
   round = false
 ) => {
+  const recentNum = 30;
   let performance = 0;
   let overallPerformance = 0;
   let averagePrice = 0;
   let medianPrice = 0;
   let overallAveragePrice = 0;
   let overallMedianPrice = 0;
+  const performanceArr = [];
+  for (let i = 0; i < recentNum; i++) {
+    performanceArr.push(0);
+  }
   const nameArr = blightsourceNames.map((s) => s.toLowerCase());
 
   for (let i = 0; i < nameArr.length; i++) {
@@ -559,6 +577,7 @@ const getCombinedBlightsourceStats = (
     medianPrice += stats.medianPrice;
     overallAveragePrice += stats.overallAveragePrice;
     overallMedianPrice += stats.overallMedianPrice;
+    stats.performanceArr.forEach((perf, i) => (performanceArr[i] += perf));
   }
 
   performance /= nameArr.length;
@@ -567,6 +586,7 @@ const getCombinedBlightsourceStats = (
   medianPrice /= nameArr.length;
   overallAveragePrice /= nameArr.length;
   overallMedianPrice /= nameArr.length;
+  performanceArr.map((perf) => (perf /= perf.length));
 
   if (round) {
     performance = Math.round((performance + Number.EPSILON) * 100) / 100;
@@ -578,6 +598,9 @@ const getCombinedBlightsourceStats = (
       Math.round((overallAveragePrice + Number.EPSILON) * 100) / 100;
     overallMedianPrice =
       Math.round((overallMedianPrice + Number.EPSILON) * 100) / 100;
+    performanceArr.map(
+      (perf) => Math.round((perf + Number.EPSILON) * 100) / 100
+    );
   }
 
   return {
@@ -587,6 +610,7 @@ const getCombinedBlightsourceStats = (
     medianPrice,
     overallAveragePrice,
     overallMedianPrice,
+    performanceArr,
   };
 };
 
