@@ -261,9 +261,7 @@ function App() {
 
       <main className='-mt-32 h-full bg-gray-800'>
         <div className='max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8 h-full'>
-          {/* Replace with your content */}
           <Routes>
-            <Route path='/' element={<Home />} />
             <Route path='/blightsources' element={<Blightsources />} />
             <Route
               path='/market/:category/:subcategory/:blightsourceName'
@@ -280,8 +278,8 @@ function App() {
             <Route path='/market' element={<Market />} />
             <Route path='/info' element={<Information />} />
             <Route path='/profile' element={<Profile user={user} />} />
+            <Route path='/' element={<Home />} />
           </Routes>
-          {/* /End replace */}
         </div>
       </main>
     </div>
