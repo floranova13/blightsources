@@ -16,7 +16,7 @@ import {
   useLocation,
   useNavigate,
 } from 'react-router-dom';
-import Home from './pages/Home';
+import Homepage from './pages/Homepage';
 import Market from './pages/Market';
 import Blightsources from './pages/Blightsources';
 import Information from './pages/Information';
@@ -278,7 +278,7 @@ function App() {
             <Route path='/market' element={<Market />} />
             <Route path='/info' element={<Information />} />
             <Route path='/profile' element={<Profile user={user} />} />
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Homepage />} />
           </Routes>
         </div>
       </main>
