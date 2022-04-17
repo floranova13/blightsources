@@ -2,7 +2,7 @@ import React from 'react';
 
 const Homepage = () => {
   return (
-    <div className='py-16 bg-gray-50 overflow-hidden'>
+    <div className='py-16 text-white overflow-hidden'>
       <div className='max-w-7xl mx-auto px-4 space-y-8 sm:px-6 lg:px-8'>
         <div className='text-base max-w-prose mx-auto lg:max-w-none'>
           <h2 className='text-base text-indigo-600 font-semibold tracking-wide uppercase'>

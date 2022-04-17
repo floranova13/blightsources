@@ -3,6 +3,7 @@ import { toTitleCase } from '../../utils';
 import { getBlightsourceNamesBySubcategory } from '../../utils/blightsources';
 import { getRecentPrices } from '../../utils/prices';
 import PriceGraph from './PriceGraph';
+import Icon from '../Icon';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useGetBlightsources } from '../../hooks/blightsources';
 
@@ -52,6 +53,7 @@ const BlightsourceSubcategoryReadout = () => {
         <div className='px-4 py-5 sm:px-6'>
           <h3 className='text-lg leading-6 font-medium text-white'>
             {toTitleCase(subcategory)}
+            <Icon icon={subcategory} />
           </h3>
           <p className='mt-1 max-w-2xl text-sm text-gray-400'>
             General market information.

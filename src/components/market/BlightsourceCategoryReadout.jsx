@@ -3,6 +3,7 @@ import { toTitleCase } from '../../utils';
 import { getBlightsourceNamesByCategory } from '../../utils/blightsources';
 import { getRecentPrices } from '../../utils/prices';
 import PriceGraph from './PriceGraph';
+import Icon from '../Icon';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useGetBlightsources } from '../../hooks/blightsources';
 

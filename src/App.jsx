@@ -73,9 +73,9 @@ function App() {
     setTitle(
       userNavigation.find((route) => location.pathname.includes(route.path))
         ?.name ||
-        navigation.find((route) => location.pathname.includes(route.path))
+        navigation.slice(1).find((route) => location.pathname.includes(route.path))
           ?.name ||
-        'Error Getting Title'
+        'Home'
     );
   }, [location]);
 
@@ -89,7 +89,7 @@ function App() {
           {({ open }) => (
             <>
               <div className='max-w-7xl mx-auto sm:px-6 lg:px-8'>
-                <div className='border-b border-gray-700'>
+                <div className=''>
                   <div className='flex items-center justify-between h-16 px-4 sm:px-0'>
                     <div className='flex items-center'>
                       <div className='flex-shrink-0'>

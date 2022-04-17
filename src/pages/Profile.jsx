@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../components/Icon';
+import IconWrapper from '../components/IconWrapper';
 import { useGetResources } from '../hooks/resources';
 import { toTitleCase } from '../utils';
 import { getBlightsourceByName } from '../utils/blightsources';
@@ -62,7 +62,7 @@ const Profile = ({ user }) => {
             <dt className='text-sm font-medium'>Wealth</dt>
             <dd className='mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2 inline-block'>
               {`${user.coins}  `}
-              <Icon classes='m-auto h-3' icon={'coin'} />
+              <IconWrapper icon={'coins'} />
             </dd>
           </div>
           <div className='py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6'>
@@ -74,7 +74,7 @@ const Profile = ({ user }) => {
           <div className='py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6'>
             <dt className='text-sm font-medium'>Resources</dt>
             <dd className='mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2'>
-              <ul className='bg-gray-400 border border-gray-900 rounded-md divide-y divide-gray-900'>
+              <ul className='bg-gray-700 border border-gray-900 rounded-md divide-y divide-gray-900'>
                 {!isLoading &&
                   resources.map((r, i) => {
                     const blightsource = getBlightsourceByName(r.name);
@@ -84,10 +84,10 @@ const Profile = ({ user }) => {
                     return (
                       <li
                         key={`${r.name}-resource`}
-                        className='text-black pl-3 pr-4 py-3 flex items-center justify-between text-sm'
+                        className='text-white pl-3 pr-4 py-3 flex items-center justify-between text-sm'
                       >
                         <div className='w-0 flex-1 flex items-center'>
-                          <Icon icon={subcategory} />
+                          <IconWrapper icon={subcategory} />
                           {/* {getIcon(blightsource.category.toLowerCase())} */}
                           {/* <PaperClipIcon
                             className='flex-shrink-0 h-5 w-5 text-gray-400'
@@ -100,7 +100,7 @@ const Profile = ({ user }) => {
                         <div className='ml-4 flex-shrink-0'>
                           <Link
                             to={`/market/${blightsource.category}/${blightsource.subcategory}/${r.name}`}
-                            className='font-bold text-purple-900 hover:text-indigo-500' // TODO: replace with icon!!!!!!
+                            className='font-bold text-white hover:text-indigo-500' // TODO: replace with icon!!!!!!
                           >
                             Market Data
                           </Link>

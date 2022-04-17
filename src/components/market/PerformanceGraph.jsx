@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useGetBlightsources } from '../../hooks/blightsources';
-import SimpleAreaChart from './SimpleAreaChart';
+import SimplePerformanceAreaChart from './SimplePerformanceAreaChart';
 import { toTitleCase } from '../../utils';
 import {
   getRecentPrices,
@@ -60,10 +60,10 @@ const PriceGraph = ({ filter, type, height, width }) => {
         </Link>
       )}
       {!isLoading && (
-        <SimpleAreaChart
+        <SimplePerformanceAreaChart
           key={prices.priceHistory.length}
           data={getPerformanceArr(prices, type, filter).map((p, i) => {
-            return { name: `T${i}`, '%': p }; // TODO: MAKE SURE SIMPLEAREACHART KNOWS WHAT KEY TO USE
+            return { name: `T${i}`, '% Change': p }; // TODO: MAKE SURE SIMPLEAREACHART KNOWS WHAT KEY TO USE
           })}
           height={height}
           width={width}

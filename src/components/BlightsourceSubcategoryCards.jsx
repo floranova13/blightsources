@@ -1,5 +1,6 @@
 import React from 'react';
 import info from '../resources/blightsources.json';
+import Icon from './Icon';
 
 // TODO: PUT A DICTIONARY OF CATEGORY ICONS
 
