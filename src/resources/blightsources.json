@@ -901,5 +901,19 @@
         }
       ]
     }
-  ]
+  ],
+  "market": {
+    "description": [
+      "Given how blightsource trading has flourished as of late, and sales of unrefined, refined, and derivitive products seizes an enormous share of overall economic activity, we see fit to track market trends. This fledgeling sector is ubiquitous, but it would be irresponsible not to inform users of its highly volatile nature.",
+      "Without further research, it would be hard to know where the market will be in one year, let alone five.",
+      ""
+    ],
+    "marketIntro": "We primarily source data from Blightbane Guild Branches, but we also enlist the services of affiliate traders. Affiliation with the Guild has the following benefits:",
+    "marketBenefits": ["Benefit1", "Benefit2", "Benefit3"],
+    "benefitDescription": "This means security, above all, is the highest benefit we offer.",
+    "contactDescription": "There are many more services offered to affiliates. Contact an Administration Division Clerk today for more info!"
+  },
+  "merchant": {
+    "description": "Affiliate merchants are afforded many rightsXXXX"
+  }
 }
