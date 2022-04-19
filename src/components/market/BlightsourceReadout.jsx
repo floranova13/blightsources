@@ -34,13 +34,23 @@ const BlightsourceReadout = () => {
 
   const getPercentageString = (n) => (n > 0 ? `+${n}%` : `${n}%`);
 
+  // ADD CATEGORY AND SUBCATEGORY HEADERS
+
   return (
     <div className='text-center my-3'>
       <div className='bg-indigo-900 bg-opacity-50 shadow overflow-hidden sm:rounded-lg'>
         <div className='px-4 py-5 sm:px-6'>
           <h3 className='text-2xl leading-6 font-bold text-white pb-3'>
-            {toTitleCase(blightsource?.subcategory)}
+            {toTitleCase(blightsource?.name)}
           </h3>
+          <div className='flex justify-center font-bold'>
+            <h2 className='inline-block text-center mt-1 mb-2 max-w-2xl text-sm text-gray-200 text-xl'>{`Category: ${toTitleCase(
+              blightsource?.category
+            )}`}</h2>
+            <h2 className='inline-block text-center mt-1 mb-2 ml-12 max-w-2xl text-sm text-gray-200 text-xl'>{`Subcategory: ${toTitleCase(
+              blightsource?.subcategory
+            )}`}</h2>
+          </div>
           <p className='mt-1 max-w-2xl text-sm text-gray-400'>
             General market information.
           </p>
