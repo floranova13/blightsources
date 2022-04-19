@@ -1,8 +1,10 @@
 import React from 'react';
 import IconWrapper from '../components/Icon';
 import { toTitleCase } from '../utils';
+import { useNavigate } from 'react-router-dom';
 
 const Market = () => {
+  let navigate = useNavigate();
   const categories = [
     'blightstones',
     'blightichors',
@@ -12,21 +14,23 @@ const Market = () => {
     'blightanomalies',
   ];
 
+  const handleClick = (nav) => navigate(nav);
+
   return (
-    <div className='text-white w-5/6 m-auto'>
-      <ul className='flex text-center'>
+    <div className='text-white m-auto'>
+      <ul className='text-center flex-row sm:flex justify-center'>
         {categories.map((category) => (
-          <li key={category} className='w-1/3'>
+          <li
+            key={category}
+            className=''
+            onClick={() => handleClick(`/market/${category.toLowerCase()}`)}
+          >
             <div className='flex align-middle items-center justify-center'>
-              <IconWrapper className='' icon={category} size='72' />
-              <button
-                type='button'
-                className='absolute inset-0 focus:outline-none'
-              >
-                <span className='sr-only'>{`${toTitleCase(
-                  category
-                )} Market Details`}</span>
-              </button>
+              <IconWrapper
+                icon={category}
+                size='72'
+                nav={`/market/${category.toLowerCase()}`}
+              />
             </div>
             <p className='mt-2 inline-block text-sm font-medium white'>
               {toTitleCase(category)}

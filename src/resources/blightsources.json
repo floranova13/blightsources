@@ -911,7 +911,27 @@
     "marketIntro": "We primarily source data from Blightbane Guild Branches, but we also enlist the services of affiliate traders. Affiliation with the Guild has the following benefits:",
     "marketBenefits": ["Benefit1", "Benefit2", "Benefit3"],
     "benefitDescription": "This means security, above all, is the highest benefit we offer.",
-    "contactDescription": "There are many more services offered to affiliates. Contact an Administration Division Clerk today for more info!"
+    "contactDescription": "There are many more services offered to affiliates. Contact an Administration Division Clerk today for more info!",
+    "merchantTestimonials": [
+      {
+        "shopName": "Ashera's Attires",
+        "merchantName": "Ashera",
+        "merchantTitle": "Owner",
+        "testimonial": "Ashera prides herself in having a wide selection of garments with custom fitting services. However, she has recently been able to expand her services to include protective wears, thanks to the many clients the Guild sends her way."
+      },
+      {
+        "shopName": "",
+        "merchantName": "",
+        "merchantTitle": "Owner",
+        "testimonial": ""
+      },
+      {
+        "shopName": "",
+        "merchantName": "",
+        "merchantTitle": "Owner",
+        "testimonial": ""
+      }
+    ]
   },
   "merchant": {
     "description": "Affiliate merchants are afforded many rightsXXXX"
