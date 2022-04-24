@@ -469,7 +469,7 @@
         {
           "category": "Blightfungi",
           "subcategory": "Blightshrooms",
-          "name": "Darkcoil",
+          "name": "Flushpod",
           "rarity": 27,
           "description": [
             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iure omnis perspiciatis veritatis molestiae sit accusamus tenetur, porro quibusdam eum!"
@@ -584,7 +584,7 @@
       "tokens": [
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Tokens",
           "name": "Dusk Orb",
           "rarity": 27,
           "description": [
@@ -596,7 +596,7 @@
         },
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Tokens",
           "name": "Token2",
           "rarity": 9,
           "description": [
@@ -608,7 +608,7 @@
         },
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Tokens",
           "name": "Token3",
           "rarity": 1,
           "description": [
@@ -622,7 +622,7 @@
       "loci": [
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Loci",
           "name": "Locus1",
           "rarity": 27,
           "description": [
@@ -634,7 +634,7 @@
         },
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Loci",
           "name": "Locus2",
           "rarity": 9,
           "description": [
@@ -646,7 +646,7 @@
         },
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Loci",
           "name": "Locus3",
           "rarity": 1,
           "description": [
@@ -660,7 +660,7 @@
       "vestiges": [
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Vestiges",
           "name": "Lightmare Prism",
           "rarity": 27,
           "description": [
@@ -672,7 +672,7 @@
         },
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Vestiges",
           "name": "Vestige2",
           "rarity": 9,
           "description": [
@@ -684,7 +684,7 @@
         },
         {
           "category": "Blightanomalies",
-          "subcategory": "Blightanomalies",
+          "subcategory": "Vestiges",
           "name": "Vestige3",
           "rarity": 1,
           "description": [
