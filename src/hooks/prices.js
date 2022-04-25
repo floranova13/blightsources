@@ -5,7 +5,13 @@ const fetchPrices = async () => {
     'https://blightsources-backend.herokuapp.com/api/prices'
   );
   const data = await response.json();
-  return data;
+  const pricesData = {}
+
+  for(const price of data) {
+    pricesData[price.name] = price
+  }
+
+  return pricesData;
 };
 
 const fetchPrice = async (blightsourceName) => {

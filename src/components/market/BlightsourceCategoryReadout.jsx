@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { toTitleCase } from '../../utils';
 import { getBlightsourceNamesByCategory } from '../../utils/blightsources';
-import { getRecentPrices } from '../../utils/prices';
+import { getRecentPrices, getCurrentPrice } from '../../utils/prices';
 import PriceGraph from './PriceGraph';
 import Icon from '../Icon';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -20,7 +20,7 @@ const BlightsourceCategoryReadout = () => { // TODO: Eventually, seperate the da
   useEffect(() => {
     if (!isLoading) {
       const totalPrice = blightsources.reduce((previous, current) => {
-        return previous + prices[current].priceHistory[prices[current].priceHistory.length - 1];
+        return previous + getCurrentPrice(prices[current]);
       }, 0);
       const totalPerformance = blightsources.reduce((previous, current) => {
         const recentPrices = getRecentPrices(prices[current]);

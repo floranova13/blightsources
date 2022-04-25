@@ -389,6 +389,8 @@ export const getPrice = (blightsourceName) => {
   return prices[blightsourceName];
 };
 
+export const getPriceFromArr = (prices, blightsourceName) => prices.find(b => b.name === blightsourceName);
+
 export const getNewBlightsourcePrice = (blightsourceName, price) => {
   const blightsource = getBlightsourceByName(blightsourceName);
   const { basePrice, priceHistory } = price;
@@ -419,7 +421,7 @@ export const getNewBlightsourcePrice = (blightsourceName, price) => {
   const directionMult = Math.random() >= 0.5 ? 1 : -1;
   const newNum = clamp(
     getRandomInt(1, 31 - blightsource.rarity + 1) * directionMult +
-      priceHistory[priceHistory.length - 1],
+      getCurrentPrice(price),
     minNum,
     maxNum
   );
@@ -468,10 +470,8 @@ export const getBlightsourceStats = (price, round = false) => {
   const overallAveragePrice = getMean(price.priceHistory);
   const medianPrice = getMedian(recentPrices);
   const overallMedianPrice = getMedian(price.priceHistory);
-  const difference =
-    price.priceHistory[price.priceHistory.length - 1] - recentPrices[0];
-  const overallDifference =
-    price.priceHistory[price.priceHistory.length - 1] - price.basePrice;
+  const difference = getCurrentPrice(price) - recentPrices[0];
+  const overallDifference = getCurrentPrice(price) - price.basePrice;
   const percentage = (difference / recentPrices[0]) * 100;
   const overallPercentage = (overallDifference / price.basePrice) * 100;
   const performance = round

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useGetPrices, useGetPrice } from '../hooks/prices';
+import { getBlightsourceNames } from '../utils/blightsources';
 
 const Information = () => {
   const [blightsources, setBlightsources] = useState([]);
-  const [prices, setPrices] = useState([]);
+  const [prices, setPrices] = useState(null);
   const { data: pricesData, isLoading: isLoadingPrices } = useGetPrices();
 
   const fetchBlightsources = async () => {
@@ -15,19 +16,23 @@ const Information = () => {
   };
 
   useEffect(() => {
-    // fetchBlightsources();
     if (!isLoadingPrices) {
       setPrices(pricesData);
     }
   }, [pricesData, isLoadingPrices]);
-
+  
   return (
     <div className='text-white'>
-      {/* <h1>{blightsources}</h1> */}
       <ul>
-        {prices.map((p, i) => {
-          return <li key={p.name}>{`${p.name} - ${p.basePrice}`}</li>;
-        })}
+        {prices &&
+          getBlightsourceNames().map((blightsourceName, i) => {
+            console.log(prices[blightsourceName]);
+            return (
+              <li
+                key={blightsourceName}
+              >{`${blightsourceName} - ${prices[blightsourceName].basePrice}`}</li>
+            );
+          })}
       </ul>
     </div>
   );
