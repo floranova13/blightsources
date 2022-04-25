@@ -1,5 +1,4 @@
 import { useQuery } from 'react-query';
-import { getPrices, getPrice, updatePrices } from '../utils/prices';
 
 const fetchPrices = async () => {
   const response = await fetch(
@@ -17,10 +16,10 @@ const fetchPrice = async (blightsourceName) => {
   return data;
 };
 
-export const useGetBlightsources = () => {
+export const useGetPrices = () => {
   return useQuery(['prices'], fetchPrices);
 };
 
-export const useGetBlightsource = (name) => {
+export const useGetPrice = (name) => {
   return useQuery(['price', name.toLowerCase()], fetchPrice(name));
 };

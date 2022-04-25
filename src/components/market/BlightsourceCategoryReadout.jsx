@@ -20,12 +20,12 @@ const BlightsourceCategoryReadout = () => { // TODO: Eventually, seperate the da
   useEffect(() => {
     if (!isLoading) {
       const totalPrice = blightsources.reduce((previous, current) => {
-        return previous + prices[current].currentPrice;
+        return previous + prices[current].priceHistory[prices[current].priceHistory.length - 1];
       }, 0);
       const totalPerformance = blightsources.reduce((previous, current) => {
         const recentPrices = getRecentPrices(prices[current]);
         const difference =
-          prices[current].currentPrice - recentPrices[recentPrices.length - 2];
+          prices[current].priceHistory[prices[current].priceHistory.length - 1] - recentPrices[recentPrices.length - 2];
         const percentage =
           (difference / recentPrices[recentPrices.length - 2]) * 100;
         return previous + percentage;

@@ -21,9 +21,9 @@ const BlightsourceReadout = () => {
     if (!isLoading) {
       setBlightsource(getBlightsourceByName(blightsourceName));
       const recentPrices = getRecentPrices(price);
-      const difference = price.currentPrice - recentPrices[0];
+      const difference = price.priceHistory[price.priceHistory.length - 1] - recentPrices[0];
       const percentage = (difference / recentPrices[0]) * 100;
-      setBlightsourcePrice(price.currentPrice);
+      setBlightsourcePrice(price.priceHistory[price.priceHistory.length - 1]);
       setBlightsourcePerformance(
         Math.round((percentage + Number.EPSILON) * 100) / 100
       );
