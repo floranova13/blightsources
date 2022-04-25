@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import fetch from 'node-fetch';
-
-const fetchBlightsources = async () => {
-  const response = await fetch(
-    'https://blightsources-backend.herokuapp.com/api/blightsources'
-  );
-  const data = await response.json();
-
-  return data;
-};
+// import fetch from 'node-fetch';
 
 const Information = () => {
   const [blightsources, setBlightsources] = useState([]);
 
+  const fetchBlightsources = async () => {
+    const response = await fetch(
+      'https://blightsources-backend.herokuapp.com/api/blightsources'
+    );
+    const data = await response.json();
+    setBlightsources(data);
+  };
+
   useEffect(() => {
-    setBlightsources(fetchBlightsources());
+    fetchBlightsources();
   }, []);
 
   return (
-    <ul>
-      {blightsources.map((b, i) => {
-        return <li key={b.name}>{b.name}</li>;
-      })}
-    </ul>
+    <div className='text-white'>
+      {/* <h1>{blightsources}</h1> */}
+      <ul>
+        {blightsources.map((b, i) => {
+          return <li key={b.name}>{b.name}</li>;
+        })}
+      </ul>
+    </div>
   );
 };
 
