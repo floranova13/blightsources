@@ -5,13 +5,13 @@ import { getRecentPrices, getCurrentPrice } from '../../utils/prices';
 import PriceGraph from './PriceGraph';
 import Icon from '../Icon';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useGetBlightsources } from '../../hooks/blightsources';
+import { usePrices } from '../../hooks/prices';
 
 const BlightsourceCategoryReadout = () => { // TODO: Eventually, seperate the data into categories by rarity
   let { category } = useParams();
   const navigate = useNavigate();
   const blightsources = getBlightsourceNamesByCategory(category);
-  const { data: prices, isLoading } = useGetBlightsources();
+  const { data: prices, isLoading } = usePrices();
   const [averagePrice, setAveragePrice] = useState('');
   const [averagePerformance, setAveragePerformance] = useState(''); // Average Percentage Increase Or Decrease
   const [x, setX] = useState('');

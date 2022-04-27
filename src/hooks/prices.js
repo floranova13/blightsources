@@ -22,10 +22,10 @@ const fetchPrice = async (blightsourceName) => {
   return data;
 };
 
-export const useGetPrices = () => {
+export const usePrices = () => {
   return useQuery(['prices'], fetchPrices);
 };
 
-export const useGetPrice = (name) => {
+export const usePrice = (name) => {
   return useQuery(['price', name.toLowerCase()], fetchPrice(name));
 };

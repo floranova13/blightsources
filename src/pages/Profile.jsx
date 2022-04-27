@@ -1,6 +1,6 @@
 import React from 'react';
 import IconWrapper from '../components/IconWrapper';
-import { useGetResources } from '../hooks/resources';
+import { useResources } from '../hooks/resources';
 import { toTitleCase } from '../utils';
 import { getBlightsourceByName } from '../utils/blightsources';
 import { Link } from 'react-router-dom';
@@ -34,7 +34,7 @@ import { Link } from 'react-router-dom';
 // };
 
 const Profile = ({ user }) => {
-  const { data: resources, isLoading } = useGetResources();
+  const { data: resources, isLoading } = useResources();
 
   return (
     <div className='shadow text-white overflow-hidden sm:rounded-lg'>

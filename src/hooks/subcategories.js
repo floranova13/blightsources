@@ -21,5 +21,5 @@ export const useGetSubcategories = () => {
 };
 
 export const useGetSubcategory = (name) => {
-  return useQuery(['subcategory', name.toLowerCase()], fetchSubcategory(name));
+  return useQuery(['subcategory', name.toLowerCase()], () => fetchSubcategory(name));
 };

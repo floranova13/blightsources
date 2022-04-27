@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useGetBlightsources } from '../../hooks/blightsources';
+import { usePrices } from '../../hooks/prices';
 import SimplePerformanceAreaChart from './SimplePerformanceAreaChart';
 import { toTitleCase } from '../../utils';
 import {
@@ -47,7 +47,7 @@ const getBlightsourceUrl = (s, type) => {
 };
 
 const PriceGraph = ({ filter, type, height, width }) => {
-  const { data: prices, isLoading } = useGetBlightsources();
+  const { data: prices, isLoading } = usePrices();
 
   return (
     <div className='text-center inline-block'>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useGetBlightsource } from '../../hooks/blightsources';
+import { usePrice } from '../../hooks/prices';
 import SimpleAreaChart from './SimpleAreaChart';
 import { toTitleCase } from '../../utils';
 import { getRecentPrices } from '../../utils/prices';
@@ -15,7 +15,7 @@ const getBlightsourceUrl = (s) => {
 
 const PriceGraph = ({ blightsourceName, height, width }) => {
   const { data: price, isLoading: isBlightsourceLoading } =
-    useGetBlightsource(blightsourceName);
+  usePrice(blightsourceName);
   const [blightsource, setBlightsource] = useState(null);
 
   useEffect(() => {

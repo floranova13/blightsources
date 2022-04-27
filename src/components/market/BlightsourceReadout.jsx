@@ -5,13 +5,13 @@ import { getRecentPrices } from '../../utils/prices';
 import PriceGraph from './PriceGraph';
 import Icon from '../Icon';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useGetBlightsource } from '../../hooks/blightsources';
+import { usePrice } from '../../hooks/prices';
 
 const BlightsourceReadout = () => {
   let { category, subcategory, blightsourceName } = useParams();
   const [blightsource, setBlightsource] = useState({});
   const navigate = useNavigate();
-  const { data: price, isLoading } = useGetBlightsource(blightsourceName);
+  const { data: price, isLoading } = usePrice(blightsourceName);
   const [blightsourcePrice, setBlightsourcePrice] = useState('');
   const [blightsourcePerformance, setBlightsourcePerformance] = useState(''); // Average Percentage Increase Or Decrease
   const [x, setX] = useState('');

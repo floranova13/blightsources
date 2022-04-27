@@ -17,12 +17,12 @@ const fetchBlightsource = async (blightsourceName) => {
   return data;
 };
 
-export const useGetBlightsources = () => {
-  return useQuery(['blightsources'], getPrices);
+export const useBlightsources = () => {
+  return useQuery(['blightsources'], fetchBlightsources);
 };
 
-export const useGetBlightsource = (name) => {
-  return useQuery(['blightsource', name.toLowerCase()], () => getPrice(name));
+export const useBlightsource = (name) => {
+  return useQuery(['blightsource', name.toLowerCase()], () => fetchBlightsource(name));
 };
 
 export const useUpdatePrices = () => {

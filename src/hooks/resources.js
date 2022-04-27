@@ -1,19 +1,28 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { getResources, getResource, updateResource } from '../utils/resources';
 
-export const useGetResources = () => {
-  return useQuery(['resources'], getResources);
+const getBlightsources = () => {
+  const blightsources = localStorage.getItem('blightsources');
+  return blightsources;
 };
 
-export const useGetBlightsource = (name) => {
-  return useQuery(['resource', name.toLowerCase()], () => getResource(name));
+export const useResources = async () => {
+  return useQuery(['resources'], getBlightsources());
 };
 
-export const useUpdateResource = (r) => {
+const makeTransaction = (resources, transaction) => {
+
+} 
+
+export const useMarket = async (transaction) => {
+  const { blightsourceName, count } = transaction;
+  const blightsources = localStorage.getItem('blightsources');
+
   const queryClient = useQueryClient();
-  return useMutation(() => updateResource(r), {
+
+  return useMutation(() => makeTransaction(transaction), {
     onSuccess: () => {
-      queryClient.refetchQueries('resources', 'resource');
+      queryClient.refetchQueries('resources');
     },
   });
 };

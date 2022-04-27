@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useGetPrices, useGetPrice } from '../hooks/prices';
+import { usePrices, usePrice } from '../hooks/prices';
 import { getBlightsourceNames } from '../utils/blightsources';
 
 const Information = () => {
   const [blightsources, setBlightsources] = useState([]);
   const [prices, setPrices] = useState(null);
-  const { data: pricesData, isLoading: isLoadingPrices } = useGetPrices();
+  const { data: pricesData, isLoading: isLoadingPrices } = usePrices();
 
   const fetchBlightsources = async () => {
     const response = await fetch(
@@ -20,7 +20,7 @@ const Information = () => {
       setPrices(pricesData);
     }
   }, [pricesData, isLoadingPrices]);
-  
+
   return (
     <div className='text-white'>
       <ul>
